@@ -1,318 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="The wedding website for Ally Hall and Dalton Vaughan — April 17, 2027 in Mobile, Alabama." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ally & Dalton | April 17, 2027</title>
-
-  <!-- Google Fonts: replace or remove these if you want to self-host fonts later. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@400;500;600&family=Style+Script&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Wedding website for Ally Hall and Dalton Vaughan in Mobile, Alabama on April 17, 2027.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" data-header>
-    <a class="brand" href="#home" aria-label="Ally and Dalton home">
-      <span class="brand-script">A & D</span>
-      <span class="brand-small">April 17, 2027</span>
-    </a>
-
-    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <nav class="site-nav" aria-label="Main navigation" data-nav>
-      <a href="#schedule">Schedule</a>
-      <a href="#venues">Venues</a>
-      <a href="#wedding-party">Wedding Party</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#registry">Registry</a>
-      <a href="#faqs">FAQs</a>
-      <a href="#rsvp" class="nav-cta">RSVP</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Ally and Dalton home">A &amp; D</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="nav-toggle-line"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <ul class="nav-menu" id="site-menu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="venues.html">Venues</a></li>
+        <li><a href="wedding-party.html">Wedding Party</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="registry.html">Registry</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a class="nav-rsvp" href="rsvp.html">RSVP</a></li>
+      </ul>
     </nav>
   </header>
 
   <main id="main">
-    <section id="home" class="hero section-full">
-      <div class="hero-art hero-art-one" aria-hidden="true"></div>
-      <div class="hero-art hero-art-two" aria-hidden="true"></div>
-      <div class="hero-flourish" aria-hidden="true">✦</div>
-
-      <div class="hero-inner reveal">
-        <p class="eyebrow">Mobile, Alabama</p>
-        <h1>Ally <span>&amp;</span> Dalton</h1>
-        <p class="date-line">Saturday, April 17, 2027</p>
-        <p class="hero-copy">We cannot wait to celebrate with the people we love most.</p>
-
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Together with their families</p>
+        <h1>Ally &amp; Dalton</h1>
+        <p class="hero-date">April 17, 2027</p>
+        <p class="hero-location">Mobile, Alabama</p>
         <div class="button-row">
-          <a href="#rsvp" class="button button-primary">RSVP</a>
-          <a href="#schedule" class="button button-secondary">View the Weekend</a>
+          <a class="button" href="schedule.html">View Schedule</a>
+          <a class="button button-secondary" href="rsvp.html">RSVP</a>
         </div>
-      </div>
-
-      <div class="scroll-cue" aria-hidden="true">
-        <span>Scroll</span>
-        <div></div>
       </div>
     </section>
 
-    <section class="intro-section section reveal">
-      <div class="intro-card">
+    <section class="section intro-section">
+      <div class="section-inner narrow">
         <p class="eyebrow">Welcome</p>
-        <h2>We’re so glad you’re here.</h2>
+        <h2>We cannot wait to celebrate with you.</h2>
         <p>
-          This site will be your guide to our wedding weekend in Mobile — including the schedule,
-          venues, wedding party, registry, FAQs, and RSVP details.
+          We are so grateful for the people who have loved, encouraged, and prayed for us along the way.
+          This site will be your home for wedding weekend details, venue information, travel notes, and RSVP updates
+          as we gather in Mobile for a joyful Southern celebration.
         </p>
       </div>
     </section>
 
-    <section id="schedule" class="section section-timeline">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Wedding Weekend</p>
-        <h2>Schedule</h2>
-        <p>Here’s what to expect during our wedding weekend. We can’t wait to celebrate with you.</p>
-      </div>
-
-      <div class="timeline reveal">
-        <div class="timeline-day">
-          <h3>Friday, April 16, 2027</h3>
-
-          <article class="timeline-item">
-            <time>5:00 PM</time>
-            <div class="timeline-line" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <h4>Ceremony Rehearsal</h4>
-              <p>St. Ignatius Catholic Church</p>
-              <span>Cocktail Attire</span>
+    <section class="section">
+      <div class="section-inner">
+        <div class="section-heading">
+          <p class="eyebrow">Wedding Weekend</p>
+          <h2>Everything in one place</h2>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <div class="placeholder-image" aria-label="Placeholder for schedule photo"></div>
+            <div class="card-body">
+              <h3>Schedule</h3>
+              <p>Explore the weekend timeline, from the ceremony at St. Ignatius to the evening reception downtown.</p>
+              <a class="text-link" href="schedule.html">See the schedule</a>
             </div>
           </article>
-
-          <article class="timeline-item">
-            <time>6:30 PM</time>
-            <div class="timeline-line" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <h4>Rehearsal Dinner</h4>
-              <p>NOJA</p>
-              <span>Cocktail Attire</span>
+          <article class="card">
+            <div class="placeholder-image" aria-label="Placeholder for venue photo"></div>
+            <div class="card-body">
+              <h3>Venues</h3>
+              <p>Find addresses and notes for St. Ignatius Catholic Church, The Battle House, and NOJA.</p>
+              <a class="text-link" href="venues.html">View venues</a>
             </div>
           </article>
-
-          <article class="timeline-item">
-            <time>10:00 PM</time>
-            <div class="timeline-line" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <h4>The Night Before</h4>
-              <p>The Battle House Roof Terrace</p>
-              <span>Come As You Are</span>
+          <article class="card">
+            <div class="placeholder-image" aria-label="Placeholder for RSVP photo"></div>
+            <div class="card-body">
+              <h3>RSVP</h3>
+              <p>Share your response and any helpful guest details so we can plan a beautiful weekend together.</p>
+              <a class="text-link" href="rsvp.html">Respond here</a>
             </div>
           </article>
         </div>
-
-        <div class="timeline-day">
-          <h3>Saturday, April 17, 2027</h3>
-
-          <article class="timeline-item">
-            <time>2:00 PM</time>
-            <div class="timeline-line" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <h4>Wedding Ceremony</h4>
-              <p>St. Ignatius Catholic Church</p>
-              <span>Formal Attire</span>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <time>4:00 PM</time>
-            <div class="timeline-line" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <h4>Cocktail Hour</h4>
-              <p>The Crystal Ballroom at The Battle House</p>
-              <span>Formal Attire</span>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <time>5:00 PM</time>
-            <div class="timeline-line" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <h4>Reception</h4>
-              <p>The Crystal Ballroom at The Battle House</p>
-              <span>Formal Attire</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="venues" class="section section-soft">
-      <div class="section-heading reveal">
-        <p class="eyebrow">The Places</p>
-        <h2>Venues</h2>
-        <p>A few of the places that will shape our wedding weekend.</p>
-      </div>
-
-      <div class="venue-grid">
-        <article class="venue-card reveal">
-          <div class="venue-number">01</div>
-          <h3>NOJA</h3>
-          <p class="address">6 North Jackson Street, Mobile, AL 36602</p>
-          <p>
-            Tucked into downtown Mobile, NOJA is where we’ll begin the wedding weekend with our rehearsal dinner.
-            It has the intimate, special-occasion feel we wanted for the night before the wedding.
-          </p>
-          <a href="https://nojamobile.com" target="_blank" rel="noreferrer">Visit website</a>
-        </article>
-
-        <article class="venue-card reveal">
-          <div class="venue-number">02</div>
-          <h3>St. Ignatius Catholic Church</h3>
-          <p class="address">3704 Spring Hill Avenue, Mobile, AL 36608</p>
-          <p>
-            Our wedding ceremony will take place at St. Ignatius Catholic Church. More than simply the ceremony
-            location, it is where we will exchange our vows, begin our marriage, and share one of the most meaningful moments of our lives.
-          </p>
-          <a href="https://www.stignatiusmobile.org" target="_blank" rel="noreferrer">Visit website</a>
-        </article>
-
-        <article class="venue-card reveal">
-          <div class="venue-number">03</div>
-          <h3>The Crystal Ballroom at The Battle House</h3>
-          <p class="address">26 North Royal Street, Mobile, AL 36602</p>
-          <p>
-            The Crystal Ballroom at The Battle House is where the celebration begins after the ceremony.
-            With its historic setting, downtown location, and Southern elegance, it felt like the perfect place to gather everyone we love.
-          </p>
-          <a href="https://www.marriott.com/en-us/hotels/mobbr-the-battle-house-renaissance-mobile-hotel-and-spa/overview/" target="_blank" rel="noreferrer">Visit website</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="wedding-party" class="section">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Our People</p>
-        <h2>Wedding Party</h2>
-        <p>
-          Meet the people who have been there through every season of life — family, lifelong friends,
-          and the ones we couldn’t imagine this day without.
-        </p>
-      </div>
-
-      <div class="party-grid reveal">
-        <article>
-          <h3>Bridesmaids</h3>
-          <ul>
-            <li>Amanda Hall</li>
-            <li>Elizabeth Anne Hall</li>
-            <li>Jordan Skinner</li>
-            <li>Judi Hoyt</li>
-            <li>Lilli Swearingen</li>
-            <li>Meghan Jones</li>
-            <li>Nicole Bernal</li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Groomsmen</h3>
-          <ul>
-            <li>David Fincher Green <span>Best Man</span></li>
-            <li>Ethan Kyle Green <span>Best Man</span></li>
-            <li>Alec Hazard</li>
-            <li>Guy Johns</li>
-            <li>Jake Goff</li>
-            <li>Kyler Thompson</li>
-            <li>Zach Anderson</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section id="gallery" class="section section-gallery section-soft">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Photos</p>
-        <h2>Gallery</h2>
-        <p>Engagement photos and wedding weekend moments will live here.</p>
-      </div>
-
-      <div class="gallery-grid reveal" aria-label="Placeholder gallery">
-        <div class="gallery-placeholder">Photo</div>
-        <div class="gallery-placeholder tall">Photo</div>
-        <div class="gallery-placeholder">Photo</div>
-        <div class="gallery-placeholder wide">Photo</div>
-      </div>
-    </section>
-
-    <section id="registry" class="section">
-      <div class="registry-card reveal">
-        <p class="eyebrow">Registry</p>
-        <h2>With Gratitude</h2>
-        <p>
-          Your presence at our wedding is the greatest gift. For those who would like to celebrate with a gift,
-          we’ve included our registry details below.
-        </p>
-        <a class="button button-secondary" href="#" aria-label="Registry link coming soon">Registry Coming Soon</a>
-      </div>
-    </section>
-
-    <section id="faqs" class="section section-soft">
-      <div class="section-heading reveal">
-        <p class="eyebrow">Questions?</p>
-        <h2>FAQs</h2>
-        <p>We’ve gathered answers to some of the questions we receive most often.</p>
-      </div>
-
-      <div class="faq-list reveal">
-        <details>
-          <summary>What is the dress code?</summary>
-          <p>Formal Attire. Gentlemen are encouraged to wear a suit. Ladies are encouraged to wear a cocktail dress, formal dress, or elegant evening attire.</p>
-        </details>
-
-        <details>
-          <summary>Will the ceremony and reception be indoors?</summary>
-          <p>Yes. Both the ceremony at St. Ignatius Parish and the reception at The Battle House will take place indoors.</p>
-        </details>
-
-        <details>
-          <summary>Can I take photos or videos during the ceremony?</summary>
-          <p>We kindly ask that our ceremony be unplugged. Please silence your phone and keep it put away during the ceremony. We have hired a professional photographer and will be happy to share photos after the wedding.</p>
-        </details>
-
-        <details>
-          <summary>Can I bring a plus one?</summary>
-          <p>Yes. We want everyone to enjoy the celebration and are happy for guests to bring a date or plus-one.</p>
-        </details>
-
-        <details>
-          <summary>Are children invited?</summary>
-          <p>Yes, children are welcome at both the ceremony and reception.</p>
-        </details>
-
-        <details>
-          <summary>Where should I stay?</summary>
-          <p>We have reserved a room block at The Battle House Hotel for guests who would like to stay at the reception venue. Booking information will be added here soon.</p>
-        </details>
-      </div>
-    </section>
-
-    <section id="rsvp" class="section rsvp-section">
-      <div class="rsvp-card reveal">
-        <p class="eyebrow">Celebrate With Us</p>
-        <h2>RSVP</h2>
-        <p>Please RSVP using the name listed on your invitation.</p>
-        <a class="button button-primary" href="#" aria-label="RSVP link coming soon">RSVP Coming Soon</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>Ally & Dalton · April 17, 2027 · Mobile, Alabama</p>
+    <p>Ally Hall &amp; Dalton Vaughan</p>
+    <p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p>
   </footer>
 
   <script src="script.js"></script>
