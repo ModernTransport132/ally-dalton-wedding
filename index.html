@@ -3,16 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ally & Dalton | April 17, 2027</title>
-  <meta name="description" content="Wedding website for Ally Hall and Dalton Vaughan in Mobile, Alabama on April 17, 2027.">
+  <title>Ally &amp; Dalton Wedding | April 17, 2027</title>
+  <meta name="description" content="Celebrate Ally Hall and Dalton Vaughan's wedding weekend in Mobile, Alabama on Saturday, April 17, 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ally &amp; Dalton Wedding">
+  <meta property="og:title" content="Ally &amp; Dalton Wedding | April 17, 2027">
+  <meta property="og:description" content="Celebrate Ally Hall and Dalton Vaughan's wedding weekend in Mobile, Alabama on Saturday, April 17, 2027.">
+  <meta property="og:url" content="https://moderntransport132.github.io/ally-dalton-wedding/">
+  <meta name="twitter:card" content="summary">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Luxurious+Script&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="site-frame" aria-hidden="true">
+    <span class="site-frame-mark">A<br>&amp;<br>D</span>
+    <span class="site-frame-date">Apr<br>17<br>2027</span>
+    <span class="site-frame-place">Mobile, AL</span>
+  </div>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Ally and Dalton home">A &amp; D</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+      <a class="brand" href="index.html" aria-label="Alexandra and Dalton home"><img src="assets/logos/wedding-logo-navy.png" alt="Alexandra and Dalton wedding logo"></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle navigation menu">
         <span class="nav-toggle-line"></span>
         <span class="sr-only">Menu</span>
       </button>
@@ -20,6 +34,7 @@
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="venues.html">Venues</a></li>
+        <li><a href="lodging.html">Lodging</a></li>
         <li><a href="wedding-party.html">Wedding Party</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="registry.html">Registry</a></li>
@@ -34,13 +49,30 @@
       <div class="hero-floral hero-floral-left" aria-hidden="true"></div>
       <div class="hero-floral hero-floral-right" aria-hidden="true"></div>
       <div class="hero-content">
-        <p class="eyebrow">Together with their families</p>
-        <h1>Ally &amp; Dalton</h1>
+        <h1 class="hero-names" aria-label="Alexandra and Dalton">
+          <span class="hero-name-line">Alexandra</span>
+          <span class="hero-and">and</span>
+          <span class="hero-name-line">Dalton</span>
+        </h1>
         <p class="hero-date">April 17, 2027</p>
         <p class="hero-location">Mobile, Alabama</p>
-        <div class="button-row">
-          <a class="button" href="rsvp.html">RSVP</a>
-          <a class="button button-secondary" href="schedule.html">View Schedule</a>
+        <div class="countdown" role="timer" aria-live="off" aria-label="Countdown to the wedding ceremony" data-countdown-target="2027-04-17T14:00:00-05:00">
+          <div class="countdown-item">
+            <span class="countdown-value" data-countdown-days>000</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" data-countdown-hours>00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" data-countdown-minutes>00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-value" data-countdown-seconds>00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
         </div>
       </div>
     </section>
@@ -53,9 +85,78 @@
         </div>
         <p>
           We are so grateful for the people who have loved, encouraged, and prayed for us along the way.
-          This site will be your home for wedding weekend details, venue information, travel notes, and RSVP updates
-          as we gather in Mobile for a joyful Southern celebration.
+          We hope this site helps you feel prepared and excited for the weekend as we gather in Mobile
+          to celebrate with the people we love most.
         </p>
+      </div>
+    </section>
+
+    <section class="section home-details-section" aria-labelledby="home-details-heading">
+      <div class="section-inner home-details-layout">
+        <div class="home-details-title">
+          <p class="eyebrow">In Mobile</p>
+          <h2 id="home-details-heading">The Weekend</h2>
+        </div>
+        <div class="home-details-list">
+          <article class="home-detail-item">
+            <div class="home-detail-meta">
+              <p class="eyebrow">The Ceremony</p>
+              <span class="detail-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" focusable="false">
+                  <path d="M14 58V30L32 15l18 15v28" />
+                  <path d="M22 58V38h20v20M32 15V6M26 10h12M14 58h36" />
+                  <circle cx="32" cy="29" r="5" />
+                </svg>
+              </span>
+              <p class="home-detail-address"><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=St.%20Ignatius%20Catholic%20Church%203704%20Spring%20Hill%20Avenue%20Mobile%20AL%2036608" target="_blank" rel="noopener noreferrer">3704 Spring Hill Avenue<br>Mobile, Alabama 36608</a></p>
+            </div>
+            <div class="home-detail-main">
+              <h3>St. Ignatius Catholic Church</h3>
+              <span class="detail-flourish" aria-hidden="true"></span>
+            </div>
+            <div class="home-detail-action">
+              <a class="text-link detail-action-link" href="venues.html">View Venue <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="home-detail-item">
+            <div class="home-detail-meta">
+              <p class="eyebrow">The Reception</p>
+              <span class="detail-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" focusable="false">
+                  <path d="M18 58V22h28v36M14 58h36M22 22v-6h20v6M28 16l4-6 4 6" />
+                  <path d="M24 30h5M35 30h5M24 39h5M35 39h5M24 48h5M35 48h5M29 58V49h6v9" />
+                </svg>
+              </span>
+              <p class="home-detail-address"><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Battle%20House%2026%20North%20Royal%20Street%20Mobile%20AL%2036602" target="_blank" rel="noopener noreferrer">The Battle House<br>26 North Royal Street</a></p>
+            </div>
+            <div class="home-detail-main">
+              <h3>The Crystal Ballroom</h3>
+              <span class="detail-flourish" aria-hidden="true"></span>
+            </div>
+            <div class="home-detail-action">
+              <a class="text-link detail-action-link" href="schedule.html">View Schedule <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="home-detail-item">
+            <div class="home-detail-meta">
+              <p class="eyebrow">The Stay</p>
+              <span class="detail-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" focusable="false">
+                  <path d="M21 58h24a5 5 0 0 0 5-5V20a5 5 0 0 0-5-5H21a5 5 0 0 0-5 5v33a5 5 0 0 0 5 5Z" />
+                  <path d="M25 15v-5h16v5M25 24v26M41 24v26M16 52h34M48 28l7 5-7 5" />
+                </svg>
+              </span>
+              <p>Room block, parking, and travel notes will live here as the weekend gets closer.</p>
+            </div>
+            <div class="home-detail-main">
+              <h3>Guest Details</h3>
+              <span class="detail-flourish" aria-hidden="true"></span>
+            </div>
+            <div class="home-detail-action">
+              <a class="text-link detail-action-link" href="lodging.html">View Lodging <span aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -67,7 +168,6 @@
         </div>
         <div class="home-feature-grid">
           <article class="home-feature-card">
-            <p class="feature-number">01</p>
             <div class="card-body">
               <p class="eyebrow">Weekend Preview</p>
               <h3>From rehearsal to reception</h3>
@@ -76,7 +176,6 @@
             </div>
           </article>
           <article class="home-feature-card">
-            <p class="feature-number">02</p>
             <div class="card-body">
               <p class="eyebrow">Venue Preview</p>
               <h3>Mobile, Alabama settings</h3>
@@ -85,7 +184,6 @@
             </div>
           </article>
           <article class="home-feature-card">
-            <p class="feature-number">03</p>
             <div class="card-body">
               <p class="eyebrow">Guest Details</p>
               <h3>A polished guide for guests</h3>
@@ -100,12 +198,12 @@
     <section class="section home-venue-story">
       <div class="section-inner home-split">
         <div class="home-image-stack" aria-label="Venue photo placeholders">
-          <div class="placeholder-image home-photo-main"></div>
-          <div class="placeholder-image home-photo-small"></div>
+          <div class="placeholder-image home-photo-main" role="img" aria-label="Large venue photo placeholder"></div>
+          <div class="placeholder-image home-photo-small" role="img" aria-label="Small reception detail photo placeholder"></div>
         </div>
         <div class="home-copy">
           <p class="eyebrow">Venues</p>
-          <h2>Classic Southern settings in the heart of Mobile.</h2>
+          <h2>Three meaningful settings for a weekend we&rsquo;ll never forget.</h2>
           <p>
             Our weekend begins at NOJA, continues with our ceremony at St. Ignatius Catholic Church,
             and ends with dinner and dancing in The Crystal Ballroom at The Battle House.
@@ -122,10 +220,10 @@
           <h2>Engagement photos and moments to come</h2>
         </div>
         <div class="home-gallery-strip" aria-label="Gallery teaser placeholders">
-          <div class="placeholder-image"></div>
-          <div class="placeholder-image"></div>
-          <div class="placeholder-image"></div>
-          <div class="placeholder-image"></div>
+          <div class="placeholder-image" role="img" aria-label="Engagement photo placeholder"></div>
+          <div class="placeholder-image" role="img" aria-label="Wedding detail photo placeholder"></div>
+          <div class="placeholder-image" role="img" aria-label="Couple portrait placeholder"></div>
+          <div class="placeholder-image" role="img" aria-label="Celebration photo placeholder"></div>
         </div>
         <div class="button-row">
           <a class="button button-secondary" href="gallery.html">View Gallery</a>
@@ -144,7 +242,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>Ally Hall &amp; Dalton Vaughan</p>
+    <p>Alexandra Hall &amp; Dalton Vaughan</p>
     <p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p>
   </footer>
 
