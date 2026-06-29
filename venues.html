@@ -1,23 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Venues | Ally &amp; Dalton</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venues | Ally & Dalton</title>
+  <meta name="description" content="Wedding venue details for Ally Hall and Dalton Vaughan in Mobile, Alabama.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="section section-soft">
-    <div class="section-heading reveal is-visible">
-      <p class="eyebrow">The Places</p>
-      <h2>Venues</h2>
-      <p>NOJA, St. Ignatius Catholic Church, and The Crystal Ballroom at The Battle House.</p>
-    </div>
-    <div class="button-row">
-      <a class="button button-secondary" href="index.html">Home</a>
-      <a class="button button-primary" href="schedule.html">Schedule</a>
-    </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Ally and Dalton home">A &amp; D</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="nav-toggle-line"></span><span class="sr-only">Menu</span></button>
+      <ul class="nav-menu" id="site-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="venues.html" aria-current="page">Venues</a></li>
+        <li><a href="wedding-party.html">Wedding Party</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="registry.html">Registry</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a class="nav-rsvp" href="rsvp.html">RSVP</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero">
+      <p class="eyebrow">Mobile, Alabama</p>
+      <h1>Venues</h1>
+      <p>Three beautiful settings for a meaningful and celebratory weekend.</p>
+    </section>
+    <section class="section">
+      <div class="section-inner">
+        <div class="venue-grid">
+          <article class="venue-card">
+            <div class="placeholder-image tall" aria-label="Placeholder for church photo"></div>
+            <div class="card-body">
+              <p class="eyebrow">Ceremony</p>
+              <h2>St. Ignatius Catholic Church</h2>
+              <p>A sacred setting for the wedding ceremony in Mobile.</p>
+            </div>
+          </article>
+          <article class="venue-card">
+            <div class="placeholder-image tall" aria-label="Placeholder for reception venue photo"></div>
+            <div class="card-body">
+              <p class="eyebrow">Reception</p>
+              <h2>The Crystal Ballroom at The Battle House</h2>
+              <p>An elegant downtown ballroom for dinner, dancing, and celebration.</p>
+            </div>
+          </article>
+          <article class="venue-card">
+            <div class="placeholder-image tall" aria-label="Placeholder for restaurant photo"></div>
+            <div class="card-body">
+              <p class="eyebrow">Rehearsal Dinner</p>
+              <h2>NOJA</h2>
+              <p>A warm gathering place for invited guests on Friday evening.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
+  <footer class="site-footer"><p>Ally Hall &amp; Dalton Vaughan</p><p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
