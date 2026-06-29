@@ -1,20 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RSVP | Ally &amp; Dalton</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP | Ally & Dalton</title>
+  <meta name="description" content="RSVP for Ally Hall and Dalton Vaughan's wedding.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="section rsvp-section">
-    <div class="rsvp-card reveal is-visible">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Ally and Dalton home">A &amp; D</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="nav-toggle-line"></span><span class="sr-only">Menu</span></button>
+      <ul class="nav-menu" id="site-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="venues.html">Venues</a></li>
+        <li><a href="wedding-party.html">Wedding Party</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="registry.html">Registry</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a class="nav-rsvp" href="rsvp.html" aria-current="page">RSVP</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero">
       <p class="eyebrow">Celebrate With Us</p>
-      <h2>RSVP</h2>
-      <p>Please RSVP using the name listed on your invitation. RSVP details will be added here.</p>
-      <a class="button button-secondary" href="index.html">Home</a>
-    </div>
+      <h1>RSVP</h1>
+      <p>Online responses will open once invitations are sent. This placeholder form is ready to connect later.</p>
+    </section>
+    <section class="section">
+      <div class="section-inner narrow">
+        <form class="rsvp-form" action="#" method="post">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+
+          <label for="attendance">Will you attend?</label>
+          <select id="attendance" name="attendance" required>
+            <option value="">Select an option</option>
+            <option value="yes">Joyfully accepts</option>
+            <option value="no">Regretfully declines</option>
+          </select>
+
+          <label for="guests">Number of guests in your party</label>
+          <input id="guests" name="guests" type="number" min="1" max="10" value="1">
+
+          <label for="notes">Dietary notes or message</label>
+          <textarea id="notes" name="notes" rows="5"></textarea>
+
+          <button class="button" type="submit">Submit RSVP</button>
+          <p class="form-note">This form is a front-end placeholder for GitHub Pages and does not send responses yet.</p>
+        </form>
+      </div>
+    </section>
   </main>
+  <footer class="site-footer"><p>Ally Hall &amp; Dalton Vaughan</p><p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
