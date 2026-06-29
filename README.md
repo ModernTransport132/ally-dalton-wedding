@@ -1,37 +1,28 @@
-# Ally & Dalton Wedding
+# Ally & Dalton Wedding Website
 
-Wedding website source for Ally Hall and Dalton Vaughan.
+Static GitHub Pages wedding website for Ally Hall and Dalton Vaughan.
 
-## Repository structure
+## Details
 
-```text
-ally-dalton-wedding/
-|
-|-- index.html
-|-- schedule.html
-|-- venues.html
-|-- wedding-party.html
-|-- gallery.html
-|-- registry.html
-|-- faqs.html
-|-- rsvp.html
-|
-|-- styles.css
-|-- script.js
-|
-|-- assets/
-|   |-- images/
-|   |-- icons/
-|   `-- documents/
-|
-`-- README.md
-```
+- Wedding date: Saturday, April 17, 2027
+- Location: Mobile, Alabama
+- Ceremony: St. Ignatius Catholic Church
+- Reception: The Crystal Ballroom at The Battle House
+- Rehearsal dinner: NOJA
 
-The `assets` subfolders include `.gitkeep` placeholder files so GitHub will track the folders until real images, icons, or documents are added.
+## Pages
 
-## GitHub Pages setup
+- `index.html`
+- `schedule.html`
+- `venues.html`
+- `wedding-party.html`
+- `gallery.html`
+- `registry.html`
+- `faqs.html`
+- `rsvp.html`
 
-1. Go to **Settings > Pages**.
-2. Set **Source** to **Deploy from a branch**.
-3. Select the `main` branch and `/root` folder.
-4. Save and wait for GitHub Pages to publish the site.
+## Editing
+
+The site uses plain HTML, CSS, and JavaScript with no build step or external dependencies. Shared styles live in `styles.css`, and small interactive behavior lives in `script.js`.
+
+Photos can replace the placeholder image blocks later. Custom fonts can be added by updating the font variables near the top of `styles.css`.
