@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery | Ally &amp; Dalton</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Ally & Dalton</title>
+  <meta name="description" content="Photo gallery for Ally Hall and Dalton Vaughan.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="section section-gallery section-soft">
-    <div class="section-heading reveal is-visible">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Ally and Dalton home">A &amp; D</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><span class="nav-toggle-line"></span><span class="sr-only">Menu</span></button>
+      <ul class="nav-menu" id="site-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="venues.html">Venues</a></li>
+        <li><a href="wedding-party.html">Wedding Party</a></li>
+        <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+        <li><a href="registry.html">Registry</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a class="nav-rsvp" href="rsvp.html">RSVP</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="page-hero">
       <p class="eyebrow">Photos</p>
-      <h2>Gallery</h2>
-      <p>Engagement photos and wedding weekend moments will live here.</p>
-    </div>
-    <div class="button-row">
-      <a class="button button-secondary" href="index.html">Home</a>
-      <a class="button button-primary" href="rsvp.html">RSVP</a>
-    </div>
+      <h1>Gallery</h1>
+      <p>A place for engagement and wedding weekend photos as they are added.</p>
+    </section>
+    <section class="section">
+      <div class="section-inner">
+        <div class="gallery-grid" aria-label="Photo placeholders">
+          <div class="placeholder-image gallery-tile"></div>
+          <div class="placeholder-image gallery-tile"></div>
+          <div class="placeholder-image gallery-tile"></div>
+          <div class="placeholder-image gallery-tile"></div>
+          <div class="placeholder-image gallery-tile"></div>
+          <div class="placeholder-image gallery-tile"></div>
+        </div>
+      </div>
+    </section>
   </main>
+  <footer class="site-footer"><p>Ally Hall &amp; Dalton Vaughan</p><p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p></footer>
   <script src="script.js"></script>
 </body>
 </html>
