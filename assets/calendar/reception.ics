@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ally and Dalton Wedding//Wedding Website//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ally-dalton-reception-20270417@ally-dalton-wedding
+DTSTAMP:20260630T170000Z
+DTSTART:20270417T220000Z
+DTEND:20270418T020000Z
+SUMMARY:Ally & Dalton Wedding Reception
+LOCATION:The Crystal Ballroom at The Battle House\, 26 North Royal Street\, Mobile\, AL 36602
+DESCRIPTION:Reception celebration at The Crystal Ballroom at The Battle House. Dinner\, drinks\, and dancing. Formal attire.
+END:VEVENT
+END:VCALENDAR

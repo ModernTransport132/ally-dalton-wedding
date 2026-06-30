@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ally and Dalton Wedding//Wedding Website//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ally-dalton-ceremony-rehearsal-20270416@ally-dalton-wedding
+DTSTAMP:20260630T170000Z
+DTSTART:20270416T220000Z
+DTEND:20270416T230000Z
+SUMMARY:Ally & Dalton Ceremony Rehearsal
+LOCATION:St. Ignatius Catholic Church\, 3704 Spring Hill Avenue\, Mobile\, AL 36608
+DESCRIPTION:Ceremony rehearsal at St. Ignatius Catholic Church. Cocktail attire.
+END:VEVENT
+END:VCALENDAR

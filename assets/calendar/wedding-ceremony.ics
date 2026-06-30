@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ally and Dalton Wedding//Wedding Website//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ally-dalton-wedding-ceremony-20270417@ally-dalton-wedding
+DTSTAMP:20260630T170000Z
+DTSTART:20270417T190000Z
+DTEND:20270417T200000Z
+SUMMARY:Ally & Dalton Wedding Ceremony
+LOCATION:St. Ignatius Catholic Church\, 3704 Spring Hill Avenue\, Mobile\, AL 36608
+DESCRIPTION:Please join us as Ally and Dalton exchange vows at St. Ignatius Catholic Church. Formal attire.
+END:VEVENT
+END:VCALENDAR

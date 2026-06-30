@@ -16,10 +16,12 @@ Static GitHub Pages wedding website for Ally Hall and Dalton Vaughan.
 - `assets/icons/` - small custom icons or decorative image assets
 - `assets/documents/` - PDFs or guest documents, such as schedules or room block details
 - `assets/logos/` - monograms, venue marks, or wedding logo files
+- `assets/calendar/` - downloadable `.ics` calendar files for schedule events
 - `index.html` - home page and wedding weekend overview
 - `schedule.html` - Friday and Saturday schedule
 - `venues.html` - wedding weekend venue details
 - `lodging.html` - Battle House room block, hotel amenities, and venue history
+- `travel.html` - airport options, flight search links, rental car resources, and live Mobile weather
 - `wedding-party.html` - bridesmaids, best men, and groomsmen
 - `gallery.html` - placeholder gallery for future photos
 - `registry.html` - registry note and placeholder registry cards
@@ -54,3 +56,6 @@ The site is ready for GitHub Pages as a static project. In the repository settin
 - Keep links relative for internal pages.
 - Update each page's `<title>`, meta description, and Open Graph tags if page content changes significantly.
 - The animation respects `prefers-reduced-motion` for guests who prefer less motion.
+- Travel page Google Flights, airport, and rental car links should be manually tested before publishing.
+- The Mobile Regional Airport rental car button currently points to the official airport site until a verified rental car page is available.
+- Google Flights links on the Travel page can be replaced with copied URLs from actual Google Flights searches before publishing if more precise search results are preferred.

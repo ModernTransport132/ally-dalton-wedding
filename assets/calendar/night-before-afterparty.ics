@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ally and Dalton Wedding//Wedding Website//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ally-dalton-night-before-afterparty-20270416@ally-dalton-wedding
+DTSTAMP:20260630T170000Z
+DTSTART:20270417T030000Z
+DTEND:20270417T050000Z
+SUMMARY:Ally & Dalton Night Before Afterparty
+LOCATION:The Battle House Roof Terrace\, 26 North Royal Street\, Mobile\, AL 36602
+DESCRIPTION:Join us for music\, drinks\, and a wedding weekend kickoff on the rooftop of The Battle House. Come as you are.
+END:VEVENT
+END:VCALENDAR

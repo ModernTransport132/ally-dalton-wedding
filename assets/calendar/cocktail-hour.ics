@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ally and Dalton Wedding//Wedding Website//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ally-dalton-cocktail-hour-20270417@ally-dalton-wedding
+DTSTAMP:20260630T170000Z
+DTSTART:20270417T210000Z
+DTEND:20270417T220000Z
+SUMMARY:Ally & Dalton Cocktail Hour
+LOCATION:The Crystal Ballroom at The Battle House\, 26 North Royal Street\, Mobile\, AL 36602
+DESCRIPTION:Cocktail hour at The Battle House before the reception. Formal attire.
+END:VEVENT
+END:VCALENDAR

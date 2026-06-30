@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ally and Dalton Wedding//Wedding Website//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:ally-dalton-rehearsal-dinner-20270416@ally-dalton-wedding
+DTSTAMP:20260630T170000Z
+DTSTART:20270416T233000Z
+DTEND:20270417T023000Z
+SUMMARY:Ally & Dalton Rehearsal Dinner
+LOCATION:NOJA\, 6 North Jackson Street\, Mobile\, AL 36602
+DESCRIPTION:Rehearsal dinner at NOJA. Cocktail attire.
+END:VEVENT
+END:VCALENDAR

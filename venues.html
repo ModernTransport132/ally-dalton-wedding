@@ -32,6 +32,7 @@
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="venues.html" aria-current="page">Venues</a></li>
         <li><a href="lodging.html">Lodging</a></li>
+        <li><a href="travel.html">Travel</a></li>
         <li><a href="wedding-party.html">Wedding Party</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="registry.html">Registry</a></li>
@@ -50,7 +51,7 @@
       <div class="section-inner venue-showcase">
         <article class="venue-feature">
           <figure class="venue-image venue-photo">
-            <img src="assets/images/noja-table-setting.jpeg" alt="Candlelit round table setting at NOJA for the rehearsal dinner">
+            <img src="assets/images/noja-table-setting.png" alt="Candlelit round table setting at NOJA for the rehearsal dinner">
           </figure>
           <div class="venue-copy">
             <p class="eyebrow">Rehearsal Dinner</p>
@@ -87,6 +88,38 @@
             <a class="button" href="https://www.marriott.com/en-us/hotels/mobbr-the-battle-house-renaissance-mobile-hotel-and-spa/overview/" target="_blank" rel="noopener noreferrer">Visit Website</a>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="section venue-map-section" aria-labelledby="venue-map-heading">
+      <div class="section-inner venue-map-layout">
+        <div class="venue-map-copy">
+          <p class="eyebrow">Getting Around</p>
+          <h2 class="sr-only" id="venue-map-heading">Wedding Weekend Map</h2>
+          <div class="venue-map-links" aria-label="Choose a venue to show on the map">
+            <button class="venue-map-link" type="button" data-map-src="https://www.google.com/maps?q=NOJA%206%20North%20Jackson%20Street%20Mobile%20AL%2036602&amp;output=embed" data-map-title="Map of NOJA in Mobile, Alabama" aria-pressed="false">
+              <span class="venue-map-link-icon venue-map-link-icon-noja" aria-hidden="true"></span>
+              <span>NOJA</span>
+            </button>
+            <button class="venue-map-link" type="button" data-map-src="https://www.google.com/maps?q=St.%20Ignatius%20Catholic%20Church%203704%20Spring%20Hill%20Avenue%20Mobile%20AL%2036608&amp;output=embed" data-map-title="Map of St. Ignatius Catholic Church in Mobile, Alabama" aria-pressed="false">
+              <span class="venue-map-link-icon venue-map-link-icon-church" aria-hidden="true"></span>
+              <span>St. Ignatius Catholic Church</span>
+            </button>
+            <button class="venue-map-link is-active" type="button" data-map-src="https://www.google.com/maps?q=The%20Battle%20House%2026%20North%20Royal%20Street%20Mobile%20AL%2036602&amp;output=embed" data-map-title="Map of The Battle House in Mobile, Alabama" aria-pressed="true">
+              <span class="venue-map-link-icon venue-map-link-icon-battle" aria-hidden="true"></span>
+              <span>The Battle House</span>
+            </button>
+          </div>
+        </div>
+        <div class="venue-map-frame">
+          <iframe
+            title="Map of The Battle House in Mobile, Alabama"
+            src="https://www.google.com/maps?q=The%20Battle%20House%2026%20North%20Royal%20Street%20Mobile%20AL%2036602&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </section>
   </main>
