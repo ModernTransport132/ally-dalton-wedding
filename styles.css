@@ -15,10 +15,17 @@
   --font-script: "Luxurious Script", "Brush Script MT", cursive;
   --font-label: "Montserrat", Arial, Helvetica, sans-serif;
   --font-sans: var(--font-label);
-  --ease-soft: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-polished: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --duration-soft: 520ms;
-  --duration-reveal: 1100ms;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --duration-fast: 120ms;
+  --duration-standard: 180ms;
+  --duration-slow: 240ms;
+  --duration-page: 320ms;
+  --ease-soft: var(--ease-out);
+  --ease-polished: var(--ease-in-out);
+  --duration-soft: var(--duration-standard);
+  --duration-reveal: var(--duration-page);
 }
 
 * {
@@ -105,18 +112,15 @@ a {
   min-height: 44px;
   width: 74px;
   text-decoration: none;
-  transition: opacity var(--duration-soft) var(--ease-soft), transform var(--duration-soft) var(--ease-soft);
+  transition:
+    opacity var(--duration-standard) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
 }
 
 .brand img {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.brand:hover {
-  opacity: 0.82;
-  transform: translateY(-1px);
 }
 
 .nav-toggle {
@@ -129,6 +133,10 @@ a {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition:
+    background-color var(--duration-standard) var(--ease-out),
+    border-color var(--duration-standard) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
 }
 
 .nav-toggle-line,
@@ -174,10 +182,9 @@ a {
   visibility: hidden;
   list-style: none;
   transition:
-    max-height 620ms var(--ease-soft),
-    opacity 360ms var(--ease-polished),
-    transform 520ms var(--ease-soft),
-    visibility 0ms linear 620ms;
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-drawer),
+    visibility 0ms linear var(--duration-slow);
 }
 
 .nav-menu.is-open {
@@ -187,9 +194,8 @@ a {
   transform: translate3d(0, 0, 0);
   visibility: visible;
   transition:
-    max-height 620ms var(--ease-soft),
-    opacity 420ms var(--ease-polished),
-    transform 520ms var(--ease-soft),
+    opacity var(--duration-slow) var(--ease-out),
+    transform var(--duration-slow) var(--ease-drawer),
     visibility 0ms;
 }
 
@@ -217,7 +223,7 @@ a {
   transform: scaleX(0);
   transform-origin: left;
   background: currentColor;
-  transition: transform var(--duration-soft) var(--ease-soft);
+  transition: transform var(--duration-standard) var(--ease-out);
 }
 
 .nav-menu a,
@@ -226,14 +232,12 @@ a {
   -webkit-tap-highlight-color: rgba(244, 192, 175, 0.28);
 }
 
-.nav-menu a:hover,
 .nav-menu a:focus,
 .nav-menu a[aria-current="page"] {
   background: transparent;
   color: var(--navy);
 }
 
-.nav-menu a:hover::after,
 .nav-menu a:focus-visible::after,
 .nav-menu a[aria-current="page"]::after {
   transform: scaleX(1);
@@ -383,11 +387,11 @@ a {
   text-transform: uppercase;
   cursor: pointer;
   transition:
-    background var(--duration-soft) var(--ease-soft),
-    border-color var(--duration-soft) var(--ease-soft),
-    color var(--duration-soft) var(--ease-soft),
-    box-shadow var(--duration-soft) var(--ease-soft),
-    transform var(--duration-soft) var(--ease-soft);
+    background-color var(--duration-standard) var(--ease-out),
+    border-color var(--duration-standard) var(--ease-out),
+    color var(--duration-standard) var(--ease-out),
+    box-shadow var(--duration-standard) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
   text-align: center;
   overflow-wrap: anywhere;
 }
@@ -397,7 +401,6 @@ a {
   color: var(--navy);
 }
 
-.button:hover,
 .button:focus-visible {
   transform: translateY(-2px);
   box-shadow: 0 16px 34px rgba(23, 47, 96, 0.18);
@@ -413,10 +416,18 @@ a {
   outline-offset: 4px;
 }
 
-.button-secondary:hover,
 .button-secondary:focus-visible {
   background: var(--navy);
   color: var(--white);
+}
+
+.button:active,
+.nav-toggle:active,
+.brand:active,
+.text-link:active,
+.calendar-link:active,
+.venue-map-link:active {
+  transform: scale(0.97);
 }
 
 .countdown {
@@ -502,7 +513,7 @@ a {
 .home-hero .hero-location,
 .home-hero .countdown {
   opacity: 0;
-  animation: invitation-fade 1.15s var(--ease-soft) forwards;
+  animation: invitation-fade 1s var(--ease-out) forwards;
 }
 
 .hero-names {
@@ -775,10 +786,9 @@ a {
   font-size: 1.35rem;
   font-weight: 400;
   line-height: 1;
-  transition: transform var(--duration-soft) var(--ease-soft);
+  transition: transform var(--duration-fast) var(--ease-out);
 }
 
-.detail-action-link:hover span,
 .detail-action-link:focus-visible span {
   transform: translateX(3px);
 }
@@ -807,10 +817,10 @@ a {
     var(--soft-blue);
   box-shadow: 0 16px 38px rgba(23, 47, 96, 0.06);
   transition:
-    background var(--duration-soft) var(--ease-soft),
-    border-color var(--duration-soft) var(--ease-soft),
-    box-shadow var(--duration-soft) var(--ease-soft),
-    transform var(--duration-soft) var(--ease-soft);
+    background-color var(--duration-standard) var(--ease-out),
+    border-color var(--duration-standard) var(--ease-out),
+    box-shadow var(--duration-standard) var(--ease-out),
+    transform var(--duration-standard) var(--ease-out);
 }
 
 .home-feature-card::before {
@@ -966,7 +976,7 @@ a {
 @keyframes invitation-fade {
   from {
     opacity: 0;
-    transform: translate3d(0, 8px, 0);
+    transform: translate3d(0, 6px, 0);
   }
 
   to {
@@ -1010,11 +1020,12 @@ a {
 
 .reveal-on-scroll {
   opacity: 0;
-  transform: translate3d(0, 28px, 0);
+  transform: translate3d(0, 10px, 0);
   transition:
-    opacity var(--duration-reveal) var(--ease-soft),
-    transform var(--duration-reveal) var(--ease-soft);
+    opacity var(--duration-page) var(--ease-out),
+    transform var(--duration-page) var(--ease-out);
   transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
 }
 
 .reveal-on-scroll.is-visible {
@@ -1023,11 +1034,11 @@ a {
 }
 
 .schedule-event.reveal-on-scroll:nth-of-type(odd) {
-  transform: translate3d(-10px, 18px, 0);
+  transform: translate3d(-6px, 8px, 0);
 }
 
 .schedule-event.reveal-on-scroll:nth-of-type(even) {
-  transform: translate3d(10px, 18px, 0);
+  transform: translate3d(6px, 8px, 0);
 }
 
 .schedule-event.reveal-on-scroll.is-visible {
@@ -1035,16 +1046,22 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: var(--duration-fast) !important;
+    transition-delay: 0ms !important;
   }
 
-  .reveal-on-scroll {
+  .reveal-on-scroll,
+  .schedule-event.reveal-on-scroll:nth-of-type(odd),
+  .schedule-event.reveal-on-scroll:nth-of-type(even) {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -1055,6 +1072,11 @@ a {
   .home-hero .countdown {
     opacity: 1 !important;
     transform: none !important;
+    animation: none !important;
+  }
+
+  .hero-floral {
+    animation: none !important;
   }
 }
 
@@ -1131,7 +1153,10 @@ h3 {
 .info-panel,
 .registry-card,
 .event-card {
-  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  transition:
+    border-color var(--duration-standard) var(--ease-out),
+    box-shadow var(--duration-standard) var(--ease-out),
+    transform var(--duration-standard) var(--ease-out);
 }
 
 .card-body {
@@ -1225,10 +1250,9 @@ h3 {
   transform: scaleX(0.32);
   transform-origin: left;
   background: currentColor;
-  transition: transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform var(--duration-standard) var(--ease-out);
 }
 
-.text-link:hover::after,
 .text-link:focus-visible::after {
   transform: scaleX(1);
 }
@@ -1238,7 +1262,9 @@ h3 {
   display: inline-block;
   color: inherit;
   text-decoration: none;
-  transition: color 260ms ease, transform 260ms ease;
+  transition:
+    color var(--duration-standard) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
 }
 
 .map-link::after {
@@ -1252,22 +1278,20 @@ h3 {
   transform-origin: left;
   background: currentColor;
   opacity: 0.58;
-  transition: transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform var(--duration-standard) var(--ease-out);
 }
 
-.map-link:hover,
 .map-link:focus-visible {
   color: var(--navy);
   transform: translateY(-1px);
 }
 
-.map-link:hover::after,
 .map-link:focus-visible::after {
   transform: scaleX(1);
 }
 
 .map-link:active {
-  transform: translateY(0) scale(0.99);
+  transform: scale(0.97);
 }
 
 .timeline {
@@ -1459,10 +1483,10 @@ h3 {
   text-decoration: none;
   text-transform: uppercase;
   transition:
-    background var(--duration-soft) var(--ease-soft),
-    border-color var(--duration-soft) var(--ease-soft),
-    box-shadow var(--duration-soft) var(--ease-soft),
-    transform var(--duration-soft) var(--ease-soft);
+    background-color var(--duration-standard) var(--ease-out),
+    border-color var(--duration-standard) var(--ease-out),
+    box-shadow var(--duration-standard) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
 }
 
 .calendar-link::before {
@@ -1474,7 +1498,6 @@ h3 {
   line-height: 1;
 }
 
-.calendar-link:hover,
 .calendar-link:focus-visible {
   border-color: rgba(23, 47, 96, 0.32);
   background: var(--white);
@@ -1678,10 +1701,10 @@ h3 {
   cursor: pointer;
   box-shadow: 0 10px 28px rgba(23, 47, 96, 0.045);
   transition:
-    background-color var(--duration-soft) var(--ease-soft),
-    border-color var(--duration-soft) var(--ease-soft),
-    box-shadow var(--duration-soft) var(--ease-soft),
-    transform var(--duration-soft) var(--ease-soft);
+    background-color var(--duration-standard) var(--ease-out),
+    border-color var(--duration-standard) var(--ease-out),
+    box-shadow var(--duration-standard) var(--ease-out),
+    transform var(--duration-fast) var(--ease-out);
 }
 
 .venue-map-link-icon {
@@ -1716,7 +1739,6 @@ h3 {
   filter: invert(40%) sepia(9%) saturate(900%) hue-rotate(178deg) brightness(90%) contrast(86%);
 }
 
-.venue-map-link:hover,
 .venue-map-link:focus-visible,
 .venue-map-link.is-active {
   background: rgba(255, 255, 255, 0.94);
@@ -1724,7 +1746,6 @@ h3 {
   box-shadow: 0 16px 38px rgba(23, 47, 96, 0.09);
 }
 
-.venue-map-link:hover,
 .venue-map-link:focus-visible {
   transform: translateY(-2px);
 }
@@ -1931,7 +1952,9 @@ h3 {
   overflow: hidden;
   padding: 0;
   text-align: center;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    transform var(--duration-standard) var(--ease-out),
+    box-shadow var(--duration-standard) var(--ease-out);
 }
 
 .person-card::after {
@@ -2051,9 +2074,9 @@ h3 {
   background: rgba(255, 255, 255, 0.88);
   box-shadow: 0 16px 38px rgba(23, 47, 96, 0.07);
   transition:
-    border-color var(--duration-soft) var(--ease-soft),
-    box-shadow var(--duration-soft) var(--ease-soft),
-    transform var(--duration-soft) var(--ease-soft);
+    border-color var(--duration-standard) var(--ease-out),
+    box-shadow var(--duration-standard) var(--ease-out),
+    transform var(--duration-standard) var(--ease-out);
 }
 
 .airport-card::before {
@@ -2966,7 +2989,7 @@ h3 {
 
   .schedule-event.reveal-on-scroll:nth-of-type(odd),
   .schedule-event.reveal-on-scroll:nth-of-type(even) {
-    transform: translate3d(0, 18px, 0);
+    transform: translate3d(0, 10px, 0);
   }
 
   .schedule-event.reveal-on-scroll.is-visible {
@@ -3134,10 +3157,9 @@ h3 {
     transform: translate3d(0, -8px, 0);
     visibility: hidden;
     transition:
-      max-height 420ms var(--ease-soft),
-      opacity 260ms var(--ease-polished),
-      transform 420ms var(--ease-soft),
-      visibility 0s linear 420ms;
+      opacity var(--duration-slow) var(--ease-out),
+      transform var(--duration-slow) var(--ease-drawer),
+      visibility 0s linear var(--duration-slow);
   }
 
   .travel-page .nav-menu.is-open {
@@ -3148,9 +3170,8 @@ h3 {
     transform: translate3d(0, 0, 0);
     visibility: visible;
     transition:
-      max-height 520ms var(--ease-soft),
-      opacity 320ms var(--ease-polished),
-      transform 520ms var(--ease-soft),
+      opacity var(--duration-slow) var(--ease-out),
+      transform var(--duration-slow) var(--ease-drawer),
       visibility 0s linear 0s;
   }
 
@@ -3368,11 +3389,57 @@ h3 {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .brand:hover {
+    opacity: 0.82;
+    transform: translateY(-1px);
+  }
+
+  .nav-menu a:hover {
+    background: transparent;
+    color: var(--navy);
+  }
+
+  .nav-menu a:hover::after,
+  .text-link:hover::after,
+  .map-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 34px rgba(23, 47, 96, 0.18);
+  }
+
+  .button-secondary:hover {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .detail-action-link:hover span {
+    transform: translateX(3px);
+  }
+
+  .map-link:hover {
+    color: var(--navy);
+    transform: translateY(-1px);
+  }
+
+  .calendar-link:hover {
+    border-color: rgba(23, 47, 96, 0.32);
+    background: var(--white);
+    box-shadow: 0 10px 26px rgba(23, 47, 96, 0.1);
+    transform: translateY(-1px);
+  }
+
+  .venue-map-link:hover {
+    background: rgba(255, 255, 255, 0.94);
+    border-color: rgba(23, 47, 96, 0.3);
+    box-shadow: 0 16px 38px rgba(23, 47, 96, 0.09);
+    transform: translateY(-2px);
+  }
+
   .home-feature-card:hover {
     border-color: rgba(23, 47, 96, 0.18);
-    background:
-      linear-gradient(rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.84)),
-      var(--soft-blue);
     box-shadow: 0 18px 42px rgba(23, 47, 96, 0.1);
     transform: translateY(-2px);
   }
@@ -3380,7 +3447,8 @@ h3 {
   .card:hover,
   .venue-card:hover,
   .registry-card:hover,
-  .event-card:hover {
+  .event-card:hover,
+  .airport-card:hover {
     border-color: rgba(23, 47, 96, 0.24);
     box-shadow: 0 22px 52px rgba(23, 47, 96, 0.13);
     transform: translateY(-2px);
@@ -3390,4 +3458,14 @@ h3 {
     transform: translateY(-3px);
     box-shadow: 0 20px 48px rgba(23, 47, 96, 0.13);
   }
+}
+
+.button:active,
+.nav-toggle:active,
+.brand:active,
+.text-link:active,
+.map-link:active,
+.calendar-link:active,
+.venue-map-link:active {
+  transform: scale(0.97);
 }

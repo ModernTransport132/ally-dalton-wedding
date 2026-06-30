@@ -273,7 +273,7 @@ revealElements.forEach((element) => {
   const groupIndex = revealGroupCounts.get(revealGroup) || 0;
 
   element.classList.add("reveal-on-scroll");
-  element.style.setProperty("--reveal-delay", `${Math.min(groupIndex, 3) * 85}ms`);
+  element.style.setProperty("--reveal-delay", `${Math.min(groupIndex, 3) * 45}ms`);
   revealGroupCounts.set(revealGroup, groupIndex + 1);
 });
 
