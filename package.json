@@ -1,0 +1,14 @@
+{
+  "name": "ally-dalton-wedding",
+  "version": "1.0.0",
+  "description": "Static GitHub Pages wedding website for Ally Hall and Dalton Vaughan.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "playwright": "^1.61.1"
+  }
+}

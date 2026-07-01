@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Travel | Ally &amp; Dalton Wedding</title>
   <meta name="description" content="Airport options, flight search links, rental car resources, and travel notes for Ally Hall and Dalton Vaughan's wedding weekend in Mobile, Alabama.">
   <meta property="og:type" content="website">
@@ -13,7 +13,7 @@
   <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lora:wght@400;500;600&family=Luxurious+Script&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Josefin+Sans:wght@500;600;700&family=Lora:wght@400;500;600&family=Luxurious+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="travel-page">
@@ -25,7 +25,7 @@
   </div>
   <header class="site-header">
     <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Alexandra and Dalton home"><img src="assets/logos/wedding-logo-navy.png" alt="Alexandra and Dalton wedding logo"></a>
+      <a class="brand" href="index.html" aria-label="Alexandra and Dalton home"><img src="assets/logos/wedding-logo-navy.png" alt="Alexandra and Dalton wedding logo" width="857" height="642" decoding="async"></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle navigation menu"><span class="nav-toggle-line"></span><span class="sr-only">Menu</span></button>
       <ul class="nav-menu" id="site-menu">
         <li><a href="index.html">Home</a></li>
@@ -44,85 +44,167 @@
   <main id="main">
     <section class="page-hero">
       <p class="eyebrow">Guest Travel</p>
-      <h1>Travel</h1>
-      <p>For guests flying in, Mobile is within reach of several Gulf Coast airports. Below are a few options to compare flights, drive times, and rental car availability.</p>
+      <h1 class="sr-only">Travel</h1>
+      <p>A few helpful travel notes for guests joining us in Mobile. Mobile Regional is the closest airport, with Pensacola and Gulfport as nearby options to compare.</p>
+      <dl class="travel-hero-facts" aria-label="Travel quick facts">
+        <div>
+          <dt>Wedding Weekend</dt>
+          <dd>April 17, 2027</dd>
+        </div>
+        <div>
+          <dt>Home Base</dt>
+          <dd>The Battle House</dd>
+        </div>
+        <div>
+          <dt>Closest Airport</dt>
+          <dd>MOB, 30 minutes</dd>
+        </div>
+      </dl>
     </section>
 
     <section class="section travel-section" aria-labelledby="airport-options-heading">
       <div class="section-inner">
         <div class="section-heading travel-section-heading">
-          <p class="eyebrow" id="airport-options-heading">Airport Options</p>
+          <p class="eyebrow">Airport Options</p>
+          <h2 id="airport-options-heading" class="sr-only">Airport options</h2>
+          <p>MOB is the simplest arrival if the schedule works. Pensacola and Gulfport can be helpful backups when fares, nonstop routes, or rental car availability are better.</p>
         </div>
-        <div class="airport-grid">
-          <article class="airport-card airport-card-blue">
-            <div class="airport-card-top">
-              <div>
-                <p class="eyebrow">MOB &bull; Mobile, Alabama</p>
-                <h2>Mobile Regional Airport</h2>
+        <div class="airport-grid" data-airport-flip-grid>
+          <article class="airport-card airport-card-blue" data-airport-card>
+            <div class="airport-card-inner">
+              <div class="airport-card-face airport-card-front">
+                <div class="airport-card-top">
+                  <div>
+                    <p class="airport-card-kicker">Closest Option</p>
+                    <p class="eyebrow">MOB &bull; Mobile, Alabama</p>
+                    <h2>Mobile Regional Airport</h2>
+                  </div>
+                </div>
+                <dl class="airport-details">
+                  <div>
+                    <dt>Drive from The Battle House</dt>
+                    <dd>30 minutes</dd>
+                  </div>
+                  <div>
+                    <dt>Distance from The Battle House</dt>
+                    <dd>18 miles</dd>
+                  </div>
+                </dl>
+                <button class="airport-flip-toggle" type="button" aria-expanded="false">
+                  <span class="sr-only">Show Mobile Regional Airport links</span>
+                  <span aria-hidden="true">+</span>
+                  <span class="airport-flip-label" aria-hidden="true">Links</span>
+                </button>
               </div>
-            </div>
-            <dl class="airport-details">
-              <div>
-                <dt>Drive from The Battle House</dt>
-                <dd>30 minutes</dd>
+              <div class="airport-card-face airport-card-back" aria-hidden="true">
+                <div class="airport-card-back-copy">
+                  <p class="eyebrow">MOB Resources</p>
+                  <h3>Mobile Regional Airport</h3>
+                  <p>Compare flights, airport details, and rental car options.</p>
+                </div>
+                <div class="airport-actions">
+                  <a class="button button-secondary" href="https://www.google.com/travel/flights?q=Flights%20to%20MOB%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to MOB for April 16-18, 2027">Search Flights to MOB</a>
+                  <a class="button button-secondary" href="https://www.mobairport.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Mobile Regional Airport website">Airport Website</a>
+                  <a class="button button-secondary" href="https://www.mobairport.com/" target="_blank" rel="noopener noreferrer" aria-label="View Mobile Regional Airport rental car information">Rental Cars</a>
+                </div>
+                <button class="airport-flip-toggle airport-flip-toggle-back" type="button" aria-expanded="true">
+                  <span class="sr-only">Show Mobile Regional Airport details</span>
+                  <span aria-hidden="true">-</span>
+                  <span class="airport-flip-label" aria-hidden="true">Details</span>
+                </button>
               </div>
-              <div>
-                <dt>Distance from The Battle House</dt>
-                <dd>18 miles</dd>
-              </div>
-            </dl>
-            <div class="airport-actions">
-              <a class="button button-secondary" href="https://www.google.com/travel/flights?q=Flights%20to%20MOB%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to MOB for April 16-18, 2027">Search Flights to MOB</a>
-              <a class="button button-secondary" href="https://www.mobairport.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Mobile Regional Airport website">Airport Website</a>
-              <a class="button button-secondary" href="https://www.mobairport.com/" target="_blank" rel="noopener noreferrer" aria-label="View Mobile Regional Airport rental car information">Rental Cars</a>
             </div>
           </article>
 
-          <article class="airport-card airport-card-green">
-            <div class="airport-card-top">
-              <div>
-                <p class="eyebrow">PNS &bull; Pensacola, Florida</p>
-                <h2>Pensacola International Airport</h2>
+          <article class="airport-card airport-card-green" data-airport-card>
+            <div class="airport-card-inner">
+              <div class="airport-card-face airport-card-front">
+                <div class="airport-card-top">
+                  <div>
+                    <p class="airport-card-kicker">Best Backup</p>
+                    <p class="eyebrow">PNS &bull; Pensacola, Florida</p>
+                    <h2>Pensacola International Airport</h2>
+                  </div>
+                </div>
+                <dl class="airport-details">
+                  <div>
+                    <dt>Drive from The Battle House</dt>
+                    <dd>60 minutes</dd>
+                  </div>
+                  <div>
+                    <dt>Distance from The Battle House</dt>
+                    <dd>56 miles</dd>
+                  </div>
+                </dl>
+                <button class="airport-flip-toggle" type="button" aria-expanded="false">
+                  <span class="sr-only">Show Pensacola International Airport links</span>
+                  <span aria-hidden="true">+</span>
+                  <span class="airport-flip-label" aria-hidden="true">Links</span>
+                </button>
               </div>
-            </div>
-            <dl class="airport-details">
-              <div>
-                <dt>Drive from The Battle House</dt>
-                <dd>60 minutes</dd>
+              <div class="airport-card-face airport-card-back" aria-hidden="true">
+                <div class="airport-card-back-copy">
+                  <p class="eyebrow">PNS Resources</p>
+                  <h3>Pensacola International Airport</h3>
+                  <p>Compare flights, airport details, and rental car options.</p>
+                </div>
+                <div class="airport-actions">
+                  <a class="button button-secondary" href="https://www.google.com/travel/flights?q=Flights%20to%20PNS%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to PNS for April 16-18, 2027">Search Flights to PNS</a>
+                  <a class="button button-secondary" href="https://flypensacola.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Pensacola International Airport website">Airport Website</a>
+                  <a class="button button-secondary" href="https://flypensacola.com/go/ground-transportation/" target="_blank" rel="noopener noreferrer" aria-label="View Pensacola International Airport rental car information">Rental Cars</a>
+                </div>
+                <button class="airport-flip-toggle airport-flip-toggle-back" type="button" aria-expanded="true">
+                  <span class="sr-only">Show Pensacola International Airport details</span>
+                  <span aria-hidden="true">-</span>
+                  <span class="airport-flip-label" aria-hidden="true">Details</span>
+                </button>
               </div>
-              <div>
-                <dt>Distance from The Battle House</dt>
-                <dd>56 miles</dd>
-              </div>
-            </dl>
-            <div class="airport-actions">
-              <a class="button button-secondary" href="https://www.google.com/travel/flights?q=Flights%20to%20PNS%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to PNS for April 16-18, 2027">Search Flights to PNS</a>
-              <a class="button button-secondary" href="https://flypensacola.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Pensacola International Airport website">Airport Website</a>
-              <a class="button button-secondary" href="https://flypensacola.com/go/ground-transportation/" target="_blank" rel="noopener noreferrer" aria-label="View Pensacola International Airport rental car information">Rental Cars</a>
             </div>
           </article>
 
-          <article class="airport-card airport-card-rose">
-            <div class="airport-card-top">
-              <div>
-                <p class="eyebrow">GPT &bull; Gulfport, Mississippi</p>
-                <h2>Gulfport-Biloxi International Airport</h2>
+          <article class="airport-card airport-card-rose" data-airport-card>
+            <div class="airport-card-inner">
+              <div class="airport-card-face airport-card-front">
+                <div class="airport-card-top">
+                  <div>
+                    <p class="airport-card-kicker">Alternate Route</p>
+                    <p class="eyebrow">GPT &bull; Gulfport, Mississippi</p>
+                    <h2>Gulfport-Biloxi International Airport</h2>
+                  </div>
+                </div>
+                <dl class="airport-details">
+                  <div>
+                    <dt>Drive from The Battle House</dt>
+                    <dd>60 minutes</dd>
+                  </div>
+                  <div>
+                    <dt>Distance from The Battle House</dt>
+                    <dd>73 miles</dd>
+                  </div>
+                </dl>
+                <button class="airport-flip-toggle" type="button" aria-expanded="false">
+                  <span class="sr-only">Show Gulfport-Biloxi International Airport links</span>
+                  <span aria-hidden="true">+</span>
+                  <span class="airport-flip-label" aria-hidden="true">Links</span>
+                </button>
               </div>
-            </div>
-            <dl class="airport-details">
-              <div>
-                <dt>Drive from The Battle House</dt>
-                <dd>60 minutes</dd>
+              <div class="airport-card-face airport-card-back" aria-hidden="true">
+                <div class="airport-card-back-copy">
+                  <p class="eyebrow">GPT Resources</p>
+                  <h3>Gulfport-Biloxi International Airport</h3>
+                  <p>Compare flights, airport details, and rental car options.</p>
+                </div>
+                <div class="airport-actions">
+                  <a class="button button-secondary" href="https://www.google.com/travel/flights?q=Flights%20to%20GPT%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to GPT for April 16-18, 2027">Search Flights to GPT</a>
+                  <a class="button button-secondary" href="https://www.flygpt.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Gulfport-Biloxi International Airport website">Airport Website</a>
+                  <a class="button button-secondary" href="https://www.flygpt.com/flygpt/rental-cars/" target="_blank" rel="noopener noreferrer" aria-label="View Gulfport-Biloxi International Airport rental car information">Rental Cars</a>
+                </div>
+                <button class="airport-flip-toggle airport-flip-toggle-back" type="button" aria-expanded="true">
+                  <span class="sr-only">Show Gulfport-Biloxi International Airport details</span>
+                  <span aria-hidden="true">-</span>
+                  <span class="airport-flip-label" aria-hidden="true">Details</span>
+                </button>
               </div>
-              <div>
-                <dt>Distance from The Battle House</dt>
-                <dd>73 miles</dd>
-              </div>
-            </dl>
-            <div class="airport-actions">
-              <a class="button button-secondary" href="https://www.google.com/travel/flights?q=Flights%20to%20GPT%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to GPT for April 16-18, 2027">Search Flights to GPT</a>
-              <a class="button button-secondary" href="https://www.flygpt.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Gulfport-Biloxi International Airport website">Airport Website</a>
-              <a class="button button-secondary" href="https://www.flygpt.com/flygpt/rental-cars/" target="_blank" rel="noopener noreferrer" aria-label="View Gulfport-Biloxi International Airport rental car information">Rental Cars</a>
             </div>
           </article>
         </div>
@@ -162,14 +244,17 @@
           </div>
 
           <div class="weather-forecast" data-weather-forecast aria-label="Three day Mobile forecast">
-            <p class="weather-loading">Forecast loading...</p>
+            <p class="weather-loading">Checking Mobile skies...</p>
           </div>
           <p class="weather-source">Live weather is provided by Open-Meteo and reflects current Mobile conditions, not the April 2027 forecast.</p>
         </aside>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><p>Alexandra Hall &amp; Dalton Vaughan</p><p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p></footer>
-  <script src="script.js"></script>
+  <footer class="site-footer"><p style="font-family: 'Luxurious Script', 'Brush Script MT', cursive;">Alexandra Hall &amp; Dalton Vaughan</p><p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p></footer>
+  <script src="script.js" defer></script>
+<!-- impeccable-live-start -->
+<script src="http://localhost:8400/live.js"></script>
+<!-- impeccable-live-end -->
 </body>
 </html>

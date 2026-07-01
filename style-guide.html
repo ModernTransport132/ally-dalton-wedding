@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Style Guide | Ally &amp; Dalton Wedding</title>
   <meta name="description" content="Temporary development style guide for Ally and Dalton's wedding website.">
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Luxurious+Script&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Josefin+Sans:wght@500;600;700&family=Luxurious+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
             <p class="eyebrow">Card Example</p>
             <h2>Registry Card</h2>
             <p>Cards stay useful for grouped guest actions and clear practical details.</p>
-            <a class="button button-secondary" href="#">Coming Soon</a>
+            <button class="button button-secondary" type="button" disabled aria-disabled="true">Coming Soon</button>
           </article>
         </div>
       </div>
@@ -117,7 +117,7 @@
             <h2>The Crystal Ballroom</h2>
             <p class="venue-address"><a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Battle%20House%2026%20North%20Royal%20Street%20Mobile%20AL%2036602" target="_blank" rel="noopener noreferrer">26 North Royal Street, Mobile, AL 36602</a></p>
             <p>Venue sections can use cards because the image, address, copy, and action belong together.</p>
-            <a class="button" href="#">Visit Website</a>
+            <a class="button" href="venues.html">Visit Website</a>
           </div>
         </article>
       </div>
@@ -201,6 +201,9 @@
     </section>
   </main>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
+<!-- impeccable-live-start -->
+<script src="http://localhost:8400/live.js"></script>
+<!-- impeccable-live-end -->
 </body>
 </html>
