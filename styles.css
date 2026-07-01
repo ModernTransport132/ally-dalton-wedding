@@ -2037,6 +2037,7 @@ h3 {
 }
 
 .travel-section {
+  padding-top: 1.75rem;
   background:
     linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.96)),
     linear-gradient(135deg, rgba(176, 213, 240, 0.55), var(--white) 46%, rgba(203, 222, 167, 0.5));
@@ -2048,7 +2049,7 @@ h3 {
 }
 
 .travel-section-heading {
-  margin-bottom: 1.55rem;
+  margin-bottom: 1.1rem;
 }
 
 .airport-card {
@@ -2389,6 +2390,37 @@ h3 {
   --scroll-card-fill: var(--white);
 }
 
+.airport-card {
+  --airport-card-base: var(--soft-blue);
+  --airport-card-overlay-start: rgba(255, 255, 255, 0.82);
+  --airport-card-overlay-end: rgba(255, 255, 255, 0.88);
+  background:
+    linear-gradient(var(--airport-card-overlay-start), var(--airport-card-overlay-end)) padding-box,
+    linear-gradient(var(--airport-card-base), var(--airport-card-base)) padding-box,
+    conic-gradient(
+      from var(--scroll-border-angle),
+      rgba(23, 47, 96, 0.1),
+      rgba(176, 213, 240, 0.94) 16%,
+      rgba(244, 192, 175, 0.96) 34%,
+      rgba(203, 222, 167, 0.9) 52%,
+      rgba(255, 250, 247, 0.72) 68%,
+      rgba(23, 47, 96, 0.18) 82%,
+      rgba(176, 213, 240, 0.94)
+    ) border-box;
+}
+
+.airport-card-green {
+  --airport-card-base: var(--soft-green);
+  --airport-card-overlay-start: rgba(255, 255, 255, 0.86);
+  --airport-card-overlay-end: rgba(255, 255, 255, 0.9);
+}
+
+.airport-card-rose {
+  --airport-card-base: var(--blush);
+  --airport-card-overlay-start: rgba(255, 255, 255, 0.84);
+  --airport-card-overlay-end: rgba(255, 255, 255, 0.9);
+}
+
 .home-feature-card {
   --scroll-card-fill: var(--soft-blue);
   background:
@@ -2421,6 +2453,10 @@ h3 {
 
 .home-detail-item::before,
 .home-feature-card::before {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.airport-card::before {
   background: rgba(255, 255, 255, 0.78);
 }
 
@@ -2881,9 +2917,12 @@ h3 {
     align-items: center;
   }
 
-  .travel-section,
   .travel-weather-section {
     padding-block: clamp(2.6rem, 9vw, 4rem);
+  }
+
+  .travel-section {
+    padding-block: 1.5rem clamp(2.6rem, 9vw, 4rem);
   }
 
   .hero,
