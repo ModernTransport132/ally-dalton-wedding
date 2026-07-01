@@ -305,3 +305,74 @@ reduceMotionQuery.addEventListener("change", (event) => {
     revealElements.forEach((element) => element.classList.add("is-visible"));
   }
 });
+
+const scrollBorderCards = document.querySelectorAll(
+  [
+    ".home-detail-item",
+    ".home-feature-card",
+    ".event-card",
+    ".venue-feature",
+    ".lodging-detail",
+    ".airport-card",
+    ".travel-note",
+    ".weather-panel"
+  ].join(",")
+);
+
+function updateScrollBorderCards() {
+  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  scrollBorderCards.forEach((card) => {
+    const rect = card.getBoundingClientRect();
+    const travel = viewportHeight + rect.height;
+    const progress = travel === 0 ? 0 : (viewportHeight - rect.top) / travel;
+    const clampedProgress = Math.min(1, Math.max(0, progress));
+    const counterclockwiseAngle = 360 - clampedProgress * 360;
+
+    card.style.setProperty("--border-progress", clampedProgress.toFixed(4));
+    card.style.setProperty("--border-angle", `${counterclockwiseAngle.toFixed(2)}deg`);
+    card.style.setProperty("--scroll-border-progress", clampedProgress.toFixed(4));
+    card.style.setProperty("--scroll-border-angle", `${counterclockwiseAngle.toFixed(2)}deg`);
+  });
+}
+
+if (scrollBorderCards.length) {
+  if (reduceMotionQuery.matches) {
+    scrollBorderCards.forEach((card) => {
+      card.style.setProperty("--border-progress", "0.18");
+      card.style.setProperty("--border-angle", "295.2deg");
+      card.style.setProperty("--scroll-border-progress", "0.18");
+      card.style.setProperty("--scroll-border-angle", "295.2deg");
+    });
+  } else {
+    let borderFrame = null;
+
+    const scheduleScrollBorderUpdate = () => {
+      if (borderFrame !== null) {
+        return;
+      }
+
+      borderFrame = window.requestAnimationFrame(() => {
+        borderFrame = null;
+        updateScrollBorderCards();
+      });
+    };
+
+    updateScrollBorderCards();
+    window.addEventListener("scroll", scheduleScrollBorderUpdate, { passive: true });
+    window.addEventListener("resize", scheduleScrollBorderUpdate);
+
+    reduceMotionQuery.addEventListener("change", (event) => {
+      if (event.matches) {
+        scrollBorderCards.forEach((card) => {
+          card.style.setProperty("--border-progress", "0.18");
+          card.style.setProperty("--border-angle", "295.2deg");
+          card.style.setProperty("--scroll-border-progress", "0.18");
+          card.style.setProperty("--scroll-border-angle", "295.2deg");
+        });
+      } else {
+        updateScrollBorderCards();
+      }
+    });
+  }
+}
