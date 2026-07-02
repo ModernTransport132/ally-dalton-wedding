@@ -2483,18 +2483,18 @@ h3 {
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  min-height: 48px;
-  height: 48px;
+  min-height: 34px;
+  height: 34px;
   margin-top: 1.35rem;
-  padding: 0 1.35rem;
+  padding: 0 0.9rem;
   border: 1px solid var(--soft-blue);
-  border-radius: 20px;
+  border-radius: 14px;
   background: var(--white);
   color: var(--navy);
   font-family: var(--font-label);
-  font-size: 0.9rem;
+  font-size: 0.56rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.07em;
   line-height: 1.1;
   text-align: center;
   text-decoration: none;
@@ -6236,6 +6236,11 @@ h3 {
     transform: scale(0.94);
   }
 
+  .calendar-link {
+    min-height: 34px;
+    height: 34px;
+  }
+
   .venue-copy .button:hover,
   .venue-copy .button:focus-visible {
     border-color: var(--soft-blue);
@@ -7308,7 +7313,9 @@ h3 {
 }
 
 .travel-page .airport-card-face::before {
+  content: none;
   inset: 0.7rem;
+  border: 0;
   border-radius: 22px;
 }
 
@@ -7599,15 +7606,43 @@ h3 {
   min-height: 48px;
 }
 
+.travel-page .airport-card,
+.travel-page .airport-card-face,
+.travel-page .airport-card-top,
+.travel-page .airport-card-back-copy,
+.travel-page .airport-details,
+.travel-page .airport-details div {
+  text-align: center;
+}
+
+.travel-page .airport-card-top,
+.travel-page .airport-card-back-copy,
+.travel-page .airport-details,
+.travel-page .airport-actions {
+  justify-self: stretch;
+  justify-items: center;
+}
+
+.travel-page .airport-card-top > div,
+.travel-page .airport-card-back-copy > *,
+.travel-page .airport-details div {
+  width: 100%;
+}
+
+.travel-page .airport-card-back-copy p:not(.eyebrow) {
+  margin-right: auto;
+  margin-left: auto;
+}
+
 @media (hover: none), (pointer: coarse) {
   .travel-page .airport-card {
-    min-height: 31.5rem !important;
+    min-height: 32.5rem !important;
     padding-bottom: 0 !important;
   }
 
   .travel-page .airport-card-inner,
   .travel-page .airport-card-face {
-    min-height: 31.5rem !important;
+    min-height: 32.5rem !important;
   }
 
   .travel-page .airport-card-front .airport-flip-toggle,
@@ -7624,7 +7659,7 @@ h3 {
 
   .travel-page .airport-card-back {
     grid-template-rows: auto minmax(0.75rem, 1fr) auto auto !important;
-    padding-bottom: clamp(1.45rem, 5vw, 2rem) !important;
+    padding: clamp(1.9rem, 6vw, 2.25rem) clamp(1.85rem, 7vw, 2.45rem) clamp(1.65rem, 5.5vw, 2.15rem) !important;
   }
 
   .travel-page .airport-card-back .airport-flip-toggle-back {
@@ -7632,6 +7667,12 @@ h3 {
     justify-self: center;
     width: min(100%, 14rem);
     margin-top: 0.8rem;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1019px) {
+  .travel-page .airport-card-back {
+    padding: clamp(1.9rem, 3.2vw, 2.25rem) clamp(2rem, 4vw, 2.5rem) clamp(3.3rem, 5vw, 4.1rem) !important;
   }
 }
 
@@ -7652,16 +7693,32 @@ body {
 
 .home-hero {
   background:
-    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.78)),
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.86)),
+    url("assets/images/schedule-floral-background.png") center top / 100% auto repeat-y scroll,
+    var(--white) !important;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.86)),
     image-set(
-      url("assets/images/blue-floral-hero.webp") type("image/webp"),
-      url("assets/images/blue-floral-hero.png") type("image/png")
-    ) center / cover no-repeat,
+      url("assets/images/schedule-floral-background.webp") type("image/webp"),
+      url("assets/images/schedule-floral-background.png") type("image/png")
+    ) center top / 100% auto repeat-y scroll,
     var(--white) !important;
 }
 
+.home-hero::before,
 .home-hero::after {
-  background: radial-gradient(circle at 50% 48%, rgba(255, 255, 255, 0.78), transparent 34%) !important;
+  content: none;
+  background: none !important;
+}
+
+.home-hero .hero-floral {
+  display: none;
+}
+
+.home-hero .countdown-item {
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: none !important;
+  backdrop-filter: none;
 }
 
 .home-hero .hero-content::before,
@@ -7744,6 +7801,103 @@ body {
 .home-rsvp-cta::before,
 .home-rsvp-cta::after {
   border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.home-gallery-teaser .button-primary,
+.home-rsvp-cta .button-secondary {
+  height: 48px;
+  min-height: 48px;
+  padding: 0 1.35rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  letter-spacing: 0.085em;
+  box-shadow: none;
+  transform: none;
+  transition:
+    background var(--duration-soft) var(--ease-soft),
+    border-color var(--duration-soft) var(--ease-soft),
+    color var(--duration-soft) var(--ease-soft),
+    box-shadow var(--duration-soft) var(--ease-soft),
+    transform 220ms var(--ease-polished);
+}
+
+.home-gallery-teaser .button-primary {
+  border-color: var(--soft-blue);
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: 0 14px 18px -10px rgba(176, 213, 240, 0.95);
+}
+
+.home-gallery-teaser .button-primary:hover,
+.home-gallery-teaser .button-primary:focus-visible {
+  border-color: var(--white);
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 16px 22px -10px rgba(255, 255, 255, 0.92);
+  transform: scale(0.97);
+}
+
+.home-rsvp-cta .button-secondary {
+  border-color: var(--navy);
+  background: var(--navy);
+  color: var(--white);
+  box-shadow: 0 14px 18px -10px rgba(23, 47, 96, 0.38);
+}
+
+.home-rsvp-cta .button-secondary:hover,
+.home-rsvp-cta .button-secondary:focus-visible {
+  border-color: var(--soft-blue);
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: 0 16px 22px -10px rgba(176, 213, 240, 0.95);
+  transform: scale(0.97);
+}
+
+/* Schedule time labels */
+.schedule-section .event-time {
+  isolation: isolate;
+  width: min(100%, 28rem);
+  justify-content: center;
+  margin-bottom: -0.95rem;
+  padding: 0.58rem 1.8rem;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0.82) 18%,
+      rgba(255, 255, 255, 0.9) 50%,
+      rgba(255, 255, 255, 0.82) 82%,
+      rgba(255, 255, 255, 0)
+    );
+  box-shadow: none;
+}
+
+.schedule-section .event-time::before,
+.schedule-section .event-time::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23, 47, 96, 0),
+      rgba(176, 213, 240, 0.88) 18%,
+      rgba(23, 47, 96, 0.24) 50%,
+      rgba(176, 213, 240, 0.88) 82%,
+      rgba(23, 47, 96, 0)
+    );
+}
+
+.schedule-section .event-time::before {
+  top: 0;
+}
+
+.schedule-section .event-time::after {
+  bottom: 0;
 }
 
 .intro-section,
