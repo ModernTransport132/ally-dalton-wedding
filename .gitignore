@@ -1,0 +1,8 @@
+node_modules/
+.codex/
+.impeccable/
+.agents/
+.git.broken-*/
+.publish-*/
+assets/logos/.gitkeep
+debug.log
