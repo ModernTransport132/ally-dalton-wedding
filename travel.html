@@ -13,7 +13,7 @@
   <meta name="twitter:card" content="summary">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Josefin+Sans:wght@500;600;700&family=Lora:wght@400;500;600&family=Luxurious+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Josefin+Sans:wght@500;600;700&family=Lora:wght@400;500;600&family=Luxurious+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="travel-page">
@@ -46,29 +46,11 @@
       <p class="eyebrow">Guest Travel</p>
       <h1 class="sr-only">Travel</h1>
       <p>A few helpful travel notes for guests joining us in Mobile. Mobile Regional is the closest airport, with Pensacola and Gulfport as nearby options to compare.</p>
-      <dl class="travel-hero-facts" aria-label="Travel quick facts">
-        <div>
-          <dt>Wedding Weekend</dt>
-          <dd>April 17, 2027</dd>
-        </div>
-        <div>
-          <dt>Home Base</dt>
-          <dd>The Battle House</dd>
-        </div>
-        <div>
-          <dt>Closest Airport</dt>
-          <dd>MOB, 30 minutes</dd>
-        </div>
-      </dl>
     </section>
 
     <section class="section travel-section" aria-labelledby="airport-options-heading">
       <div class="section-inner">
-        <div class="section-heading travel-section-heading">
-          <p class="eyebrow">Airport Options</p>
-          <h2 id="airport-options-heading" class="sr-only">Airport options</h2>
-          <p>MOB is the simplest arrival if the schedule works. Pensacola and Gulfport can be helpful backups when fares, nonstop routes, or rental car availability are better.</p>
-        </div>
+        <h2 id="airport-options-heading" class="sr-only">Airport options</h2>
         <div class="airport-grid" data-airport-flip-grid>
           <article class="airport-card airport-card-blue" data-airport-card>
             <div class="airport-card-inner">
@@ -91,9 +73,9 @@
                   </div>
                 </dl>
                 <button class="airport-flip-toggle" type="button" aria-expanded="false">
-                  <span class="sr-only">Show Mobile Regional Airport links</span>
-                  <span aria-hidden="true">+</span>
-                  <span class="airport-flip-label" aria-hidden="true">Links</span>
+                  <span class="sr-only">Show Mobile Regional Airport more information</span>
+                  <span class="airport-flip-label" aria-hidden="true">More info</span>
+                  <span class="airport-flip-arrow" aria-hidden="true">&rarr;</span>
                 </button>
               </div>
               <div class="airport-card-face airport-card-back" aria-hidden="true">
@@ -103,14 +85,14 @@
                   <p>Compare flights, airport details, and rental car options.</p>
                 </div>
                 <div class="airport-actions">
-                  <a class="button button-secondary" href="https://www.google.com/travel/flights?q=Flights%20to%20MOB%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to MOB for April 16-18, 2027">Search Flights to MOB</a>
-                  <a class="button button-secondary" href="https://www.mobairport.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Mobile Regional Airport website">Airport Website</a>
-                  <a class="button button-secondary" href="https://www.mobairport.com/" target="_blank" rel="noopener noreferrer" aria-label="View Mobile Regional Airport rental car information">Rental Cars</a>
+                  <a class="button button-primary" href="https://www.google.com/travel/flights?q=Flights%20to%20MOB%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to MOB for April 16-18, 2027">Search Flights to MOB</a>
+                  <a class="button button-primary" href="https://www.mobairport.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Mobile Regional Airport website">Airport Website</a>
+                  <a class="button button-primary" href="https://www.mobairport.com/" target="_blank" rel="noopener noreferrer" aria-label="View Mobile Regional Airport rental car information">Rental Cars</a>
                 </div>
                 <button class="airport-flip-toggle airport-flip-toggle-back" type="button" aria-expanded="true">
-                  <span class="sr-only">Show Mobile Regional Airport details</span>
-                  <span aria-hidden="true">-</span>
-                  <span class="airport-flip-label" aria-hidden="true">Details</span>
+                  <span class="sr-only">Show Mobile Regional Airport less information</span>
+                  <span class="airport-flip-arrow airport-flip-arrow-left" aria-hidden="true">&larr;</span>
+                  <span class="airport-flip-label" aria-hidden="true">Less info</span>
                 </button>
               </div>
             </div>
@@ -137,9 +119,9 @@
                   </div>
                 </dl>
                 <button class="airport-flip-toggle" type="button" aria-expanded="false">
-                  <span class="sr-only">Show Pensacola International Airport links</span>
-                  <span aria-hidden="true">+</span>
-                  <span class="airport-flip-label" aria-hidden="true">Links</span>
+                  <span class="sr-only">Show Pensacola International Airport more information</span>
+                  <span class="airport-flip-label" aria-hidden="true">More info</span>
+                  <span class="airport-flip-arrow" aria-hidden="true">&rarr;</span>
                 </button>
               </div>
               <div class="airport-card-face airport-card-back" aria-hidden="true">
@@ -149,14 +131,14 @@
                   <p>Compare flights, airport details, and rental car options.</p>
                 </div>
                 <div class="airport-actions">
-                  <a class="button button-secondary" href="https://www.google.com/travel/flights?q=Flights%20to%20PNS%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to PNS for April 16-18, 2027">Search Flights to PNS</a>
-                  <a class="button button-secondary" href="https://flypensacola.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Pensacola International Airport website">Airport Website</a>
-                  <a class="button button-secondary" href="https://flypensacola.com/go/ground-transportation/" target="_blank" rel="noopener noreferrer" aria-label="View Pensacola International Airport rental car information">Rental Cars</a>
+                  <a class="button button-primary" href="https://www.google.com/travel/flights?q=Flights%20to%20PNS%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to PNS for April 16-18, 2027">Search Flights to PNS</a>
+                  <a class="button button-primary" href="https://flypensacola.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Pensacola International Airport website">Airport Website</a>
+                  <a class="button button-primary" href="https://flypensacola.com/go/ground-transportation/" target="_blank" rel="noopener noreferrer" aria-label="View Pensacola International Airport rental car information">Rental Cars</a>
                 </div>
                 <button class="airport-flip-toggle airport-flip-toggle-back" type="button" aria-expanded="true">
-                  <span class="sr-only">Show Pensacola International Airport details</span>
-                  <span aria-hidden="true">-</span>
-                  <span class="airport-flip-label" aria-hidden="true">Details</span>
+                  <span class="sr-only">Show Pensacola International Airport less information</span>
+                  <span class="airport-flip-arrow airport-flip-arrow-left" aria-hidden="true">&larr;</span>
+                  <span class="airport-flip-label" aria-hidden="true">Less info</span>
                 </button>
               </div>
             </div>
@@ -183,9 +165,9 @@
                   </div>
                 </dl>
                 <button class="airport-flip-toggle" type="button" aria-expanded="false">
-                  <span class="sr-only">Show Gulfport-Biloxi International Airport links</span>
-                  <span aria-hidden="true">+</span>
-                  <span class="airport-flip-label" aria-hidden="true">Links</span>
+                  <span class="sr-only">Show Gulfport-Biloxi International Airport more information</span>
+                  <span class="airport-flip-label" aria-hidden="true">More info</span>
+                  <span class="airport-flip-arrow" aria-hidden="true">&rarr;</span>
                 </button>
               </div>
               <div class="airport-card-face airport-card-back" aria-hidden="true">
@@ -195,14 +177,14 @@
                   <p>Compare flights, airport details, and rental car options.</p>
                 </div>
                 <div class="airport-actions">
-                  <a class="button button-secondary" href="https://www.google.com/travel/flights?q=Flights%20to%20GPT%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to GPT for April 16-18, 2027">Search Flights to GPT</a>
-                  <a class="button button-secondary" href="https://www.flygpt.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Gulfport-Biloxi International Airport website">Airport Website</a>
-                  <a class="button button-secondary" href="https://www.flygpt.com/flygpt/rental-cars/" target="_blank" rel="noopener noreferrer" aria-label="View Gulfport-Biloxi International Airport rental car information">Rental Cars</a>
+                  <a class="button button-primary" href="https://www.google.com/travel/flights?q=Flights%20to%20GPT%20April%2016%202027%20April%2018%202027" target="_blank" rel="noopener noreferrer" aria-label="Search flights to GPT for April 16-18, 2027">Search Flights to GPT</a>
+                  <a class="button button-primary" href="https://www.flygpt.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Gulfport-Biloxi International Airport website">Airport Website</a>
+                  <a class="button button-primary" href="https://www.flygpt.com/flygpt/rental-cars/" target="_blank" rel="noopener noreferrer" aria-label="View Gulfport-Biloxi International Airport rental car information">Rental Cars</a>
                 </div>
                 <button class="airport-flip-toggle airport-flip-toggle-back" type="button" aria-expanded="true">
-                  <span class="sr-only">Show Gulfport-Biloxi International Airport details</span>
-                  <span aria-hidden="true">-</span>
-                  <span class="airport-flip-label" aria-hidden="true">Details</span>
+                  <span class="sr-only">Show Gulfport-Biloxi International Airport less information</span>
+                  <span class="airport-flip-arrow airport-flip-arrow-left" aria-hidden="true">&larr;</span>
+                  <span class="airport-flip-label" aria-hidden="true">Less info</span>
                 </button>
               </div>
             </div>
@@ -251,7 +233,7 @@
       </div>
     </section>
   </main>
-  <footer class="site-footer"><p style="font-family: 'Luxurious Script', 'Brush Script MT', cursive;">Alexandra Hall &amp; Dalton Vaughan</p><p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p></footer>
+  <footer class="site-footer"><p>Alexandra Hall &amp; Dalton Vaughan</p><p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p></footer>
   <script src="script.js" defer></script>
 <!-- impeccable-live-start -->
 <script src="http://localhost:8400/live.js"></script>

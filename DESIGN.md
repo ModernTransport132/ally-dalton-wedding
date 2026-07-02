@@ -25,7 +25,7 @@ typography:
     fontWeight: 500
     lineHeight: 1.68
   label:
-    fontFamily: "Josefin Sans, Arial, Helvetica, sans-serif"
+    fontFamily: "Inter, sans-serif"
     fontWeight: 700
     lineHeight: 1.1
     letterSpacing: "0.12em"
@@ -34,9 +34,14 @@ typography:
     fontWeight: 600
     lineHeight: 1
     letterSpacing: "0"
+  nav:
+    fontFamily: "Josefin Sans, Arial, Helvetica, sans-serif"
+    fontWeight: 700
+    lineHeight: 1.1
+    letterSpacing: "0.1em"
 rounded:
   hairline: "2px"
-  button: "4px"
+  button: "20px"
   card: "8px"
   pill: "999px"
 spacing:
@@ -50,17 +55,17 @@ spacing:
   section-tight: "clamp(3rem, 2.35rem + 3.2vw, 5rem)"
 components:
   button-primary:
-    backgroundColor: "{colors.navy-ink}"
-    textColor: "{colors.white-paper}"
-    rounded: "{rounded.button}"
-    padding: "0.75rem 1.35rem"
-    height: "48px"
-    typography: "{typography.label}"
-  button-secondary:
     backgroundColor: "{colors.white-paper}"
     textColor: "{colors.navy-ink}"
     rounded: "{rounded.button}"
-    padding: "0.75rem 1.35rem"
+    padding: "0 1.35rem"
+    height: "48px"
+    typography: "{typography.label}"
+  button-secondary:
+    backgroundColor: "{colors.navy-ink}"
+    textColor: "{colors.white-paper}"
+    rounded: "{rounded.button}"
+    padding: "0 1.35rem"
     height: "48px"
     typography: "{typography.label}"
   card-surface:
@@ -70,7 +75,7 @@ components:
     padding: "1.35rem"
   nav-link:
     textColor: "{colors.navy-ink}"
-    typography: "{typography.label}"
+    typography: "{typography.nav}"
     padding: "0.55rem 0.65rem"
     height: "44px"
 ---
@@ -90,7 +95,7 @@ Most guests will use the site from phones before and during the weekend. Phone l
 **Key Characteristics:**
 - Navy is the ink; white is the base paper; ivory is a secondary wash, not the default page color.
 - Soft blue, soft green, and blush are accents, never the whole room.
-- Serif type carries warmth, script type carries emotion, and Josefin Sans labels carry clarity.
+- Serif type carries warmth, script type carries emotion, Inter labels carry clarity, and Josefin Sans is reserved for navigation.
 - Cards and bordered panels are used when they organize real guest information.
 - Motion should feel smooth, slow, and intentional, with reduced-motion alternatives.
 - Performance is part of the guest experience: large imagery needs WebP companions, lazy loading below the fold, explicit dimensions, and deferred scripts.
@@ -134,11 +139,12 @@ The palette is a restrained stationery palette: navy ink, white paper, a light i
 
 **Display Font:** Cormorant Garamond Light, loaded as Cormorant Garamond weight 300, with Cormorant Garamond, Georgia, and Times fallbacks.
 **Body Font:** Cormorant Garamond, with Georgia and Times fallbacks.
-**Label/Mono Font:** Josefin Sans for navigation, buttons, metadata, small-caps labels, and utility details.
+**Label/Utility Font:** Inter, sans-serif, for buttons, metadata, small-caps labels, and utility details.
+**Navigation Font:** Josefin Sans for navigation links only.
 **Script Accent Font:** Luxurious Script for the couple's names and selected emotional headings only.
 **Numeral Font:** Lora for selected weather temperatures and numeric accents where a softer, bookish figure style helps practical information feel less utilitarian.
 
-**Character:** The pairing is formal and warm: Cormorant gives the site its editorial wedding voice, Luxurious Script gives select moments a personal invitation quality, and Josefin Sans keeps guest logistics scannable.
+**Character:** The pairing stays formal and warm: Cormorant gives the site its editorial wedding voice, Luxurious Script gives select moments a personal invitation quality, Inter keeps guest logistics crisp, and Josefin Sans gives the navigation its distinct small-caps identity.
 
 ### Hierarchy
 - **Display** (300, tight line-height): Page and hero-level titles when the page needs a formal announcement. Size should be chosen per layout, viewport, and content length.
@@ -146,15 +152,18 @@ The palette is a restrained stationery palette: navy ink, white paper, a light i
 - **Headline** (300 to 400, balanced line-height): Section headings and page-level editorial statements. Scale by section importance rather than a fixed token size.
 - **Title** (400, compact to comfortable line-height): Cards, panels, stacked guide items, and schedule moments.
 - **Body** (500, generous line-height): Guest-facing prose and practical details. Keep readable line lengths near 65 to 75 characters.
-- **Label** (700 to 800, uppercase/small-caps tracking): Navigation, buttons, metadata, time pills, and short labels. Size must remain context-aware so labels never become too small to scan.
+- **Label** (700 to 800, uppercase/small-caps tracking): Buttons, metadata, time pills, and short labels in Inter. Size must remain context-aware so labels never become too small to scan.
+- **Navigation** (700, uppercase/small-caps tracking): Main navigation links in Josefin Sans only.
 
 ### Named Rules
 
 **The Script Restraint Rule.** Luxurious Script is reserved for names and emotional emphasis. It is forbidden for navigation, schedule details, venue addresses, travel data, FAQs, forms, and body copy.
 
-**The Guest Clarity Rule.** If a guest might need it in a hurry, Josefin Sans labels and Cormorant body text must stay large, high-contrast, and easy to scan on a phone.
+**The Guest Clarity Rule.** If a guest might need it in a hurry, Inter labels and Cormorant body text must stay large, high-contrast, and easy to scan on a phone.
 
 **The Light Display Rule.** Display headings use the light Cormorant weight for ceremony and air. Do not fake lightness by lowering opacity or contrast.
+
+**The Navigation Exception Rule.** Josefin Sans is reserved for navigation. Do not spread it into buttons, cards, metadata, body copy, or headings unless the typography system is revised again.
 
 ## 4. Elevation
 
@@ -180,16 +189,17 @@ The site uses a hybrid of fine borders, tonal surfaces, and soft ambient shadows
 Components should feel like wedding stationery made functional: crisp edges, clear labels, restrained movement, and enough structure that guests can scan quickly.
 
 ### Buttons
-- **Shape:** Lightly squared with a 4px radius for canonical site buttons.
-- **Primary:** Navy background, white text, 1px navy border, minimum 48px height, and 0.75rem 1.35rem padding.
-- **Secondary:** White background, navy text, 1px navy border.
-- **Hover / Focus:** Buttons lift by 2px and gain a navy-tinted shadow. Focus uses a 2px blush outline with 4px offset.
-- **Text:** Josefin Sans, bold, uppercase/small-caps, with 0.085em to 0.12em letter spacing.
+- **Shape:** Softly rounded with a 20px radius, 48px height, centered label, no vertical padding, and 1.35rem horizontal padding for canonical site buttons. Do not make buttons narrower to reduce their visual weight; reduce height instead.
+- **Primary:** White background, navy text, 1px soft-blue border, and a soft-blue underlight shadow.
+- **Secondary:** The inverse of primary: navy background, white text, navy border, and a restrained navy underlight.
+- **Hover / Focus:** Primary fills navy, turns text white, and shifts the border and underlight to white while shrinking slightly. Secondary fills white, turns text navy, and shifts the border and underlight to soft blue while shrinking slightly. Focus keeps a visible outline in addition to the color and scale change.
+- **Active / Touch:** Mobile and tablet taps use the same color inversion as hover with a slightly deeper press scale so the interaction works without hover.
+- **Text:** Inter, bold, uppercase/small-caps, with 0.085em to 0.12em letter spacing.
 - **Experiments:** The text-reveal and outline-grow buttons are comparison experiments, not canonical button defaults. Do not spread them site-wide until a single button system is chosen.
 
 ### Chips
 
-The site does not use a broad chip system. When a pill is needed, such as a calendar link, map selector, flip control, or small action, it uses a 999px radius, fine navy border, white translucent fill, and Josefin Sans uppercase text.
+The site does not use a broad chip system. When a pill is needed, such as a calendar link, map selector, flip control, or small action, it uses a 999px radius, fine navy border, white translucent fill, and Inter uppercase text.
 
 ### Cards / Containers
 - **Corner Style:** 8px radius for true cards; 2px radius for image placeholders and framed photography. Avoid large 24px+ card rounding.
