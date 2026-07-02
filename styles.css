@@ -3556,7 +3556,7 @@ h3 {
   letter-spacing: 0.01em;
 }
 
-.faq-answer p {
+.faq-answer p:not(.faq-label) {
   max-width: 520px;
   margin: 0 auto 1.15rem;
   color: var(--navy);
@@ -4201,7 +4201,7 @@ h3 {
     font-size: 2.75rem;
   }
 
-  .faq-answer p {
+  .faq-answer p:not(.faq-label) {
     font-size: 1.08rem;
   }
 }
