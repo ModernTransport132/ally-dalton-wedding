@@ -1095,8 +1095,8 @@ body.mobile-intro-lock {
 
 @media (max-width: 899px) {
   .home-column-reveal {
-    height: 205svh;
-    min-height: 1400px;
+    height: 260svh;
+    min-height: 1750px;
   }
 
   .home-column-reveal-sticky {

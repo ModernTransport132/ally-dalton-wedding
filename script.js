@@ -34,10 +34,10 @@ const initHomeColumnReveal = () => {
     const copyProgress = clamp((progress - 0.62) / 0.24);
     const mobileEnterProgress = clamp(progress / 0.4);
     const mobileEnterProgress1 = clamp(progress / 0.16);
-    const mobileEnterProgress2 = clamp((progress - 0.14) / 0.2);
-    const mobileEnterProgress3 = clamp((progress - 0.28) / 0.2);
-    const mobileExitProgress = clamp((progress - 0.74) / 0.18);
-    const mobileCopyProgress = clamp((progress - 0.86) / 0.12);
+    const mobileEnterProgress2 = clamp((progress - 0.2) / 0.24);
+    const mobileEnterProgress3 = clamp((progress - 0.4) / 0.24);
+    const mobileExitProgress = clamp((progress - 0.8) / 0.16);
+    const mobileCopyProgress = clamp((progress - 0.9) / 0.1);
 
     section.style.setProperty("--column-reveal-progress", progress.toFixed(3));
     section.style.setProperty("--column-copy-progress", copyProgress.toFixed(3));
