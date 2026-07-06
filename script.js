@@ -33,9 +33,9 @@ const initHomeColumnReveal = () => {
     const progress = clamp(-rect.top / scrollable);
     const copyProgress = clamp((progress - 0.62) / 0.24);
     const mobileEnterProgress = clamp(progress / 0.4);
-    const mobileEnterProgress1 = clamp(progress / 0.22);
-    const mobileEnterProgress2 = clamp((progress - 0.18) / 0.22);
-    const mobileEnterProgress3 = clamp((progress - 0.36) / 0.22);
+    const mobileEnterProgress1 = clamp(progress / 0.16);
+    const mobileEnterProgress2 = clamp((progress - 0.14) / 0.2);
+    const mobileEnterProgress3 = clamp((progress - 0.28) / 0.2);
     const mobileExitProgress = clamp((progress - 0.74) / 0.18);
     const mobileCopyProgress = clamp((progress - 0.86) / 0.12);
 
@@ -198,6 +198,7 @@ const initHomeGuideEditorial = () => {
 
   const items = Array.from(guide.querySelectorAll(".home-guide-editorial-item"));
   const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const mobileGuideQuery = window.matchMedia("(max-width: 899px)");
   let guideFrame = null;
   let splitFrame = null;
 
@@ -305,7 +306,9 @@ const initHomeGuideEditorial = () => {
 
     items.forEach((item) => {
       const rect = item.getBoundingClientRect();
-      const progress = clamp((viewportHeight * 0.72 - rect.top) / (viewportHeight * 0.85));
+      const triggerStart = mobileGuideQuery.matches ? 0.88 : 0.72;
+      const triggerDistance = mobileGuideQuery.matches ? 0.38 : 0.85;
+      const progress = clamp((viewportHeight * triggerStart - rect.top) / (viewportHeight * triggerDistance));
       item.style.setProperty("--guide-item-progress", progress.toFixed(3));
 
       const parts = Array.from(item.querySelectorAll(".home-guide-editorial-title .masked-text-inner, .home-guide-editorial-copy .masked-text-inner, .home-guide-editorial-copy .text-link"));
@@ -348,6 +351,7 @@ const initHomeGuideEditorial = () => {
     scheduleGuideUpdate();
   });
   reduceMotionQuery.addEventListener("change", scheduleGuideUpdate);
+  mobileGuideQuery.addEventListener("change", scheduleGuideUpdate);
 };
 
 const initAirportFlipCards = () => {
@@ -882,10 +886,15 @@ if (reduceMotionQuery.matches) {
         }
       });
     },
-    {
-      threshold: 0.18,
-      rootMargin: "0px 0px -12% 0px"
-    }
+    window.matchMedia("(max-width: 899px)").matches
+      ? {
+          threshold: 0.08,
+          rootMargin: "0px 0px 10% 0px"
+        }
+      : {
+          threshold: 0.18,
+          rootMargin: "0px 0px -12% 0px"
+        }
   );
 
   revealElements.forEach((element) => revealObserver.observe(element));

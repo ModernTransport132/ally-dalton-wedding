@@ -1095,8 +1095,8 @@ body.mobile-intro-lock {
 
 @media (max-width: 899px) {
   .home-column-reveal {
-    height: 310svh;
-    min-height: 1960px;
+    height: 205svh;
+    min-height: 1400px;
   }
 
   .home-column-reveal-sticky {
@@ -1144,7 +1144,7 @@ body.mobile-intro-lock {
   .home-column-reveal-image-left {
     --mobile-base-x: 5vw;
     --mobile-enter-current: var(--column-mobile-enter-1);
-    --mobile-start-y: 106svh;
+    --mobile-start-y: 103svh;
     --mobile-rise: 88svh;
     z-index: 1;
   }
@@ -1152,7 +1152,7 @@ body.mobile-intro-lock {
   .home-column-reveal-image-center {
     --mobile-base-x: 24vw;
     --mobile-enter-current: var(--column-mobile-enter-2);
-    --mobile-start-y: 121svh;
+    --mobile-start-y: 116svh;
     --mobile-rise: 86svh;
     z-index: 2;
   }
@@ -1160,7 +1160,7 @@ body.mobile-intro-lock {
   .home-column-reveal-image-right {
     --mobile-base-x: 12vw;
     --mobile-enter-current: var(--column-mobile-enter-3);
-    --mobile-start-y: 136svh;
+    --mobile-start-y: 129svh;
     --mobile-rise: 84svh;
     z-index: 3;
   }
@@ -1995,6 +1995,26 @@ body.mobile-intro-lock {
 
 .schedule-event.reveal-on-scroll.is-visible {
   transform: translate3d(0, 0, 0);
+}
+
+@media (max-width: 899px) {
+  .reveal-on-scroll {
+    transform: translate3d(0, 18px, 0);
+    transition-duration: 760ms;
+  }
+
+  .schedule-event.reveal-on-scroll:nth-of-type(odd) {
+    transform: translate3d(-6px, 14px, 0);
+  }
+
+  .schedule-event.reveal-on-scroll:nth-of-type(even) {
+    transform: translate3d(6px, 14px, 0);
+  }
+
+  .reveal-on-scroll.is-visible,
+  .schedule-event.reveal-on-scroll.is-visible {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2996,8 +3016,8 @@ h3 {
 
 .wedding-party-section {
   background:
-    linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.96)),
-    linear-gradient(135deg, var(--soft-blue), var(--white) 46%, var(--blush));
+    linear-gradient(180deg, rgba(255, 250, 247, 0.5), rgba(255, 255, 255, 0.96) 24%),
+    linear-gradient(135deg, rgba(176, 213, 240, 0.3), rgba(255, 255, 255, 0.88) 48%, rgba(203, 222, 167, 0.24));
 }
 
 .party-group + .party-group {
@@ -3006,7 +3026,7 @@ h3 {
 
 .party-group-heading {
   max-width: 720px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.35rem;
   text-align: center;
 }
 
@@ -7847,16 +7867,163 @@ body {
   background: var(--white);
   color: var(--navy);
   font-size: 1.08rem;
-  box-shadow: 0 16px 24px -12px rgba(255, 255, 255, 0.76);
+  box-shadow: none;
 }
 
 .home-rsvp-cta .button-secondary:hover,
 .home-rsvp-cta .button-secondary:focus-visible {
-  border-color: var(--soft-blue);
-  background: var(--navy);
-  color: var(--white);
-  box-shadow: 0 16px 22px -10px rgba(176, 213, 240, 0.82);
-  transform: scale(0.97);
+  border-color: var(--white);
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: none;
+  transform: none;
+}
+
+/* Wedding party cards: soft raised paper surface */
+.wedding-party-section .party-grid {
+  align-items: stretch;
+}
+
+.wedding-party-section .person-card {
+  --party-card-base: var(--soft-blue);
+  display: grid;
+  min-height: clamp(22rem, 31vw, 25.75rem);
+  align-content: start;
+  gap: clamp(1rem, 2.2vw, 1.35rem);
+  padding: clamp(1rem, 2.2vw, 1.3rem) !important;
+  overflow: hidden;
+  border: 2px solid transparent !important;
+  border-radius: 30px !important;
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 247, 0.9)) padding-box,
+    linear-gradient(var(--party-card-base), var(--party-card-base)) padding-box,
+    conic-gradient(
+      from var(--scroll-border-angle, 315deg),
+      rgba(23, 47, 96, 0.12),
+      color-mix(in srgb, var(--party-card-base) 84%, white) 22%,
+      rgba(255, 250, 247, 0.84) 48%,
+      color-mix(in srgb, var(--party-card-base) 64%, var(--navy)) 72%,
+      rgba(23, 47, 96, 0.16)
+    ) border-box !important;
+  box-shadow:
+    15px 15px 30px rgba(23, 47, 96, 0.16),
+    -15px -15px 30px rgba(255, 255, 255, 0.82) !important;
+  transform: none;
+  transition:
+    box-shadow var(--duration-soft) var(--ease-polished),
+    transform 260ms var(--ease-polished);
+}
+
+.wedding-party-section .person-card::after {
+  content: none;
+}
+
+.wedding-party-section .portrait-placeholder {
+  justify-self: center;
+  width: min(72%, 12rem);
+  aspect-ratio: 4 / 5;
+  min-height: 0;
+  overflow: hidden;
+  border: 0 !important;
+  border-radius: 50%;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.82) 56%, rgba(244, 192, 175, 0.12)),
+    #d8ebf8 !important;
+  box-shadow:
+    inset 7px 7px 16px rgba(23, 47, 96, 0.1),
+    inset -7px -7px 16px rgba(255, 255, 255, 0.92) !important;
+}
+
+.wedding-party-section .portrait-placeholder::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 0 1rem;
+  color: rgba(23, 47, 96, 0.68);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.wedding-party-section .person-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.42rem;
+  padding: 0 0.25rem 0.1rem !important;
+  text-align: center;
+}
+
+.wedding-party-section .person-card h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(1.65rem, 2.4vw, 2.1rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.wedding-party-section .person-role {
+  margin: 0;
+  color: rgba(23, 47, 96, 0.72);
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+}
+
+.wedding-party-section .person-bio {
+  display: block;
+  margin: 0.35rem 0 0;
+  color: rgba(23, 47, 96, 0.66);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .wedding-party-section .person-card:hover {
+    box-shadow:
+      18px 18px 34px rgba(23, 47, 96, 0.18),
+      -18px -18px 34px rgba(255, 255, 255, 1) !important;
+    transform: translateY(-3px);
+  }
+}
+
+@media (max-width: 759px) {
+  .wedding-party-section .person-card {
+    justify-self: center;
+    width: min(100%, 18.25rem);
+    min-height: 0;
+    gap: 0.7rem;
+    padding: 0.85rem 0.85rem 1rem !important;
+    border-radius: 22px !important;
+    box-shadow:
+      10px 10px 22px rgba(23, 47, 96, 0.15),
+      -10px -10px 22px rgba(255, 255, 255, 0.96) !important;
+  }
+
+  .wedding-party-section .portrait-placeholder {
+    width: min(62%, 8.75rem);
+  }
+
+  .wedding-party-section .person-copy {
+    gap: 0.28rem;
+  }
+
+  .wedding-party-section .person-card h3 {
+    font-size: clamp(1.38rem, 7vw, 1.72rem);
+  }
+
+  .wedding-party-section .person-role {
+    font-size: 0.68rem;
+  }
+
+  .wedding-party-section .person-bio {
+    margin-top: 0.18rem;
+    font-size: 0.88rem;
+  }
 }
 
 /* Schedule time labels */
@@ -7931,6 +8098,7 @@ body {
   .venue-map-link,
   .nav-toggle,
   .event-card,
+  .person-card,
   .venue-feature,
   .airport-card,
   .weather-panel,
