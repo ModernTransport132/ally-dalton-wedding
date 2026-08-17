@@ -296,7 +296,7 @@ const initHomeGuideEditorial = () => {
 
     if (reduceMotionQuery.matches) {
       items.forEach((item) => item.style.setProperty("--guide-item-progress", "1"));
-      guide.querySelectorAll(".masked-text-inner, .home-guide-editorial-copy .text-link").forEach((part) => {
+      guide.querySelectorAll(".masked-text-inner, .home-guide-editorial-copy .text-link, .home-guide-editorial-copy .button").forEach((part) => {
         part.style.setProperty("--text-reveal-progress", "1");
       });
       return;
@@ -306,15 +306,18 @@ const initHomeGuideEditorial = () => {
 
     items.forEach((item) => {
       const rect = item.getBoundingClientRect();
-      const triggerStart = mobileGuideQuery.matches ? 0.88 : 0.72;
-      const triggerDistance = mobileGuideQuery.matches ? 0.38 : 0.85;
+      const isMobileGuide = mobileGuideQuery.matches;
+      const triggerStart = isMobileGuide ? 0.92 : 0.72;
+      const triggerDistance = isMobileGuide ? 0.58 : 0.85;
       const progress = clamp((viewportHeight * triggerStart - rect.top) / (viewportHeight * triggerDistance));
       item.style.setProperty("--guide-item-progress", progress.toFixed(3));
 
-      const parts = Array.from(item.querySelectorAll(".home-guide-editorial-title .masked-text-inner, .home-guide-editorial-copy .masked-text-inner, .home-guide-editorial-copy .text-link"));
+      const parts = Array.from(item.querySelectorAll(".home-guide-editorial-title .masked-text-inner, .home-guide-editorial-copy .masked-text-inner, .home-guide-editorial-copy .text-link, .home-guide-editorial-copy .button"));
+      const stagger = isMobileGuide ? 0.085 : 0.065;
+      const revealSpan = isMobileGuide ? 0.44 : 0.34;
 
       parts.forEach((part, index) => {
-        const partProgress = clamp((progress - index * 0.065) / 0.34);
+        const partProgress = clamp((progress - index * stagger) / revealSpan);
         part.style.setProperty("--text-reveal-progress", partProgress.toFixed(3));
       });
     });
@@ -344,6 +347,7 @@ const initHomeGuideEditorial = () => {
   };
 
   prepareMaskedText();
+  guide.classList.add("is-motion-ready");
   updateGuideItems();
   window.addEventListener("scroll", scheduleGuideUpdate, { passive: true });
   window.addEventListener("resize", () => {
@@ -486,8 +490,15 @@ if (mobileIntro && mobileIntroVideo && mobileIntroSkip) {
 
   mobileIntroSkip.addEventListener("click", dismissMobileIntro);
   mobileIntroVideo.addEventListener("ended", dismissMobileIntro);
+  mobileIntroVideo.addEventListener("error", dismissMobileIntro);
 
   document.addEventListener("keydown", (event) => {
+    if (event.key === "Tab" && mobileIntro.classList.contains("is-visible")) {
+      event.preventDefault();
+      mobileIntroSkip.focus({ preventScroll: true });
+      return;
+    }
+
     if (event.key === "Escape" && mobileIntro.classList.contains("is-visible")) {
       dismissMobileIntro();
     }
@@ -553,6 +564,12 @@ if (navToggle && navMenu) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && navMenu.classList.contains("is-open")) {
       closeMenu(true);
+    }
+  });
+
+  window.matchMedia("(min-width: 760px)").addEventListener("change", (event) => {
+    if (event.matches) {
+      closeMenu();
     }
   });
 }
@@ -653,9 +670,13 @@ if (countdown) {
     if (minutesElement) minutesElement.textContent = String(minutes).padStart(2, "0");
     if (secondsElement) secondsElement.textContent = String(seconds).padStart(2, "0");
 
+    const unit = (value, singular) => `${value} ${singular}${value === 1 ? "" : "s"}`;
+
     countdown.setAttribute(
       "aria-label",
-      `Countdown to the wedding ceremony: ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`
+      remaining === 0
+        ? "Today is Ally and Dalton's wedding day."
+        : `Countdown to the wedding ceremony: ${unit(days, "day")}, ${unit(hours, "hour")}, ${unit(minutes, "minute")}, and ${unit(seconds, "second")}`
     );
 
     if (remaining === 0 && countdownTimer) {
@@ -678,6 +699,7 @@ if (countdown) {
     });
   } else {
     countdown.setAttribute("aria-label", "Countdown date is unavailable.");
+    countdown.hidden = true;
   }
 }
 
