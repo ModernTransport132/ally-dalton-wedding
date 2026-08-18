@@ -9,6 +9,7 @@ const initHomeColumnReveal = () => {
   }
 
   const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const mobileRevealQuery = window.matchMedia("(max-width: 899px)");
   let revealFrame = null;
 
   const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
@@ -25,6 +26,7 @@ const initHomeColumnReveal = () => {
       section.style.setProperty("--column-mobile-enter-3", "1");
       section.style.setProperty("--column-mobile-exit", "0");
       section.style.setProperty("--column-mobile-copy", "1");
+      section.classList.add("is-copy-reveal-complete");
       return;
     }
 
@@ -47,6 +49,10 @@ const initHomeColumnReveal = () => {
     section.style.setProperty("--column-mobile-enter-3", mobileEnterProgress3.toFixed(3));
     section.style.setProperty("--column-mobile-exit", mobileExitProgress.toFixed(3));
     section.style.setProperty("--column-mobile-copy", mobileCopyProgress.toFixed(3));
+    section.classList.toggle(
+      "is-copy-reveal-complete",
+      (mobileRevealQuery.matches ? mobileCopyProgress : copyProgress) >= 0.999
+    );
   };
 
   const scheduleRevealUpdate = () => {
@@ -295,9 +301,13 @@ const initHomeGuideEditorial = () => {
     guideFrame = null;
 
     if (reduceMotionQuery.matches) {
-      items.forEach((item) => item.style.setProperty("--guide-item-progress", "1"));
+      items.forEach((item) => {
+        item.style.setProperty("--guide-item-progress", "1");
+        item.classList.add("is-reveal-complete");
+      });
       guide.querySelectorAll(".masked-text-inner, .home-guide-editorial-copy .text-link, .home-guide-editorial-copy .button").forEach((part) => {
         part.style.setProperty("--text-reveal-progress", "1");
+        part.classList.add("is-reveal-complete");
       });
       return;
     }
@@ -311,14 +321,20 @@ const initHomeGuideEditorial = () => {
       const triggerDistance = isMobileGuide ? 0.58 : 0.85;
       const progress = clamp((viewportHeight * triggerStart - rect.top) / (viewportHeight * triggerDistance));
       item.style.setProperty("--guide-item-progress", progress.toFixed(3));
+      item.classList.toggle("is-reveal-complete", progress >= 0.999);
 
       const parts = Array.from(item.querySelectorAll(".home-guide-editorial-title .masked-text-inner, .home-guide-editorial-copy .masked-text-inner, .home-guide-editorial-copy .text-link, .home-guide-editorial-copy .button"));
       const stagger = isMobileGuide ? 0.085 : 0.065;
       const revealSpan = isMobileGuide ? 0.44 : 0.34;
+      const availableStagger = Math.max(1 - revealSpan, 0);
+      const partStagger = parts.length > 1
+        ? Math.min(stagger, availableStagger / (parts.length - 1))
+        : 0;
 
       parts.forEach((part, index) => {
-        const partProgress = clamp((progress - index * stagger) / revealSpan);
+        const partProgress = clamp((progress - index * partStagger) / revealSpan);
         part.style.setProperty("--text-reveal-progress", partProgress.toFixed(3));
+        part.classList.toggle("is-reveal-complete", partProgress >= 0.999);
       });
     });
   };
@@ -417,9 +433,10 @@ const initAirportFlipCards = () => {
 
 const mobileIntro = document.querySelector("[data-mobile-intro]");
 const mobileIntroVideo = document.querySelector("[data-mobile-intro-video]");
+const mobileIntroSource = document.querySelector("[data-mobile-intro-source]");
 const mobileIntroSkip = document.querySelector("[data-mobile-intro-skip]");
 
-if (mobileIntro && mobileIntroVideo && mobileIntroSkip) {
+if (mobileIntro && mobileIntroVideo && mobileIntroSource && mobileIntroSkip) {
   const introStorageKey = "ally-dalton-mobile-intro-seen";
   const mobileIntroQuery = window.matchMedia("(max-width: 899px)");
   const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -467,6 +484,8 @@ if (mobileIntro && mobileIntroVideo && mobileIntroSkip) {
     !hasSeenIntro();
 
   if (shouldShowMobileIntro) {
+    mobileIntroSource.src = mobileIntroSource.dataset.src;
+    mobileIntroVideo.load();
     mobileIntro.removeAttribute("aria-hidden");
     document.body.classList.add("mobile-intro-lock");
 

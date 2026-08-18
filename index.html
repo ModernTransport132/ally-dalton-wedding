@@ -15,14 +15,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lora:wght@400;500;600&family=Luxurious+Script&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/wedding-hero-background.webp" type="image/webp" fetchpriority="high">
   <link rel="icon" type="image/png" href="assets/logos/wedding-logo-navy.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
   <div class="mobile-intro" data-mobile-intro aria-label="Opening wedding invitation animation" aria-hidden="true">
-    <video class="mobile-intro-video" data-mobile-intro-video muted playsinline preload="metadata">
-      <source src="assets/video/wedding-mobile-intro.mp4" type="video/mp4">
+    <video class="mobile-intro-video" data-mobile-intro-video muted playsinline preload="none">
+      <source data-mobile-intro-source data-src="assets/video/wedding-mobile-intro.mp4" type="video/mp4">
     </video>
     <button class="mobile-intro-skip" type="button" data-mobile-intro-skip>Skip</button>
   </div>
@@ -74,13 +75,22 @@
       <div class="home-column-reveal-sticky">
         <div class="home-column-reveal-images" aria-hidden="true">
           <figure class="home-column-reveal-image home-column-reveal-image-left">
-            <div class="home-column-reveal-placeholder">Photo coming soon</div>
+            <picture>
+              <source srcset="assets/images/childhood-portrait-ally-640.webp 640w, assets/images/childhood-portrait-ally.webp 945w" sizes="(max-width: 899px) min(68vw, 275px), 35vw" type="image/webp">
+              <img class="home-column-reveal-ally" src="assets/images/childhood-portrait-ally.png" alt="" width="945" height="1325" loading="lazy" decoding="async">
+            </picture>
           </figure>
           <figure class="home-column-reveal-image home-column-reveal-image-center">
-            <img class="home-column-reveal-ally" src="assets/images/childhood-portrait-ally.png" alt="" width="945" height="1325" decoding="async">
+            <picture>
+              <source srcset="assets/images/childhood-portrait-640.webp 640w, assets/images/childhood-portrait.webp 1170w" sizes="(max-width: 899px) min(68vw, 275px), 35vw" type="image/webp">
+              <img src="assets/images/childhood-portrait.png" alt="" width="1170" height="1580" loading="lazy" decoding="async">
+            </picture>
           </figure>
           <figure class="home-column-reveal-image home-column-reveal-image-right">
-            <img src="assets/images/childhood-portrait.png" alt="" width="1170" height="2532" decoding="async">
+            <picture>
+              <source srcset="assets/images/engagement-beach-portrait-640.webp 640w, assets/images/engagement-beach-portrait.webp 1024w" sizes="(max-width: 899px) min(68vw, 275px), 35vw" type="image/webp">
+              <img src="assets/images/engagement-beach-portrait.jpg" alt="" width="1024" height="1536" loading="lazy" decoding="async">
+            </picture>
           </figure>
         </div>
         <div class="home-column-reveal-copy">
@@ -143,15 +153,6 @@
         </article>
         <article class="home-guide-editorial-item">
           <div class="home-guide-editorial-title">
-            <h3>Photos and memories</h3>
-          </div>
-          <div class="home-guide-editorial-copy">
-            <p>Visit the gallery area for engagement photos and future moments from the celebration.</p>
-            <a class="button button-secondary home-venue-button" href="gallery.html">Open Gallery</a>
-          </div>
-        </article>
-        <article class="home-guide-editorial-item">
-          <div class="home-guide-editorial-title">
             <h3>Gift details in one place</h3>
           </div>
           <div class="home-guide-editorial-copy">
@@ -164,17 +165,8 @@
             <h3>Answers before the weekend</h3>
           </div>
           <div class="home-guide-editorial-copy">
-            <p>Check attire, timing, parking, children, and other helpful details as plans come together.</p>
+            <p>See answers to frequently asked questions here.</p>
             <a class="button button-secondary home-venue-button" href="faqs.html">Read FAQs</a>
-          </div>
-        </article>
-        <article class="home-guide-editorial-item">
-          <div class="home-guide-editorial-title">
-            <h3>Let us know you are coming</h3>
-          </div>
-          <div class="home-guide-editorial-copy">
-            <p>Use the RSVP page when it is time to reply and share the details we need for the weekend.</p>
-            <a class="button button-secondary home-venue-button" href="rsvp.html">Go to RSVP</a>
           </div>
         </article>
       </div>
@@ -194,10 +186,6 @@
         </div>
         <div class="home-copy">
           <h2>Three meaningful settings for a weekend we&rsquo;ll never forget.</h2>
-          <p>
-            Our weekend begins at NOJA, continues with our ceremony at St. Ignatius Catholic Church,
-            and ends with dinner and dancing in The Crystal Ballroom at The Battle House.
-          </p>
           <a class="button button-secondary home-venue-button" href="venues.html">Explore Venues</a>
         </div>
       </div>

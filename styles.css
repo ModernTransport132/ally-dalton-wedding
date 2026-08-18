@@ -1009,7 +1009,13 @@ body.mobile-intro-lock {
   text-transform: uppercase;
 }
 
-.home-column-reveal-image > img {
+.home-column-reveal-image > picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.home-column-reveal-image img {
   display: block;
   width: 100%;
   height: 100%;
@@ -1017,7 +1023,7 @@ body.mobile-intro-lock {
   object-position: center 58%;
 }
 
-.home-column-reveal-image > .home-column-reveal-ally {
+.home-column-reveal-image .home-column-reveal-ally {
   object-position: center 48%;
 }
 
@@ -1087,6 +1093,12 @@ body.mobile-intro-lock {
   transform: translate3d(0, calc((1 - var(--column-copy-progress)) * 10svh), 0);
   transition: opacity 120ms linear;
   will-change: opacity, transform;
+}
+
+.home-column-reveal.is-copy-reveal-complete .home-column-reveal-copy {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
 }
 
 .home-column-reveal-copy .eyebrow {
@@ -1534,6 +1546,10 @@ body.mobile-intro-lock {
   margin-top: 1rem;
 }
 
+.home-venue-story .home-copy .button {
+  margin-top: var(--space-section);
+}
+
 .home-venue-button {
   display: flex;
   height: 48px;
@@ -1917,8 +1933,8 @@ body.mobile-intro-lock {
 .masked-text {
   display: inline-block;
   overflow: hidden;
-  margin-block: -0.1em;
-  padding-block: 0.1em;
+  margin-block: -0.12em -0.24em;
+  padding-block: 0.12em 0.24em;
   vertical-align: baseline;
 }
 
@@ -1964,8 +1980,7 @@ body.mobile-intro-lock {
     opacity: calc(0.18 + (var(--text-reveal-progress) * 0.82));
     filter: blur(calc((1 - var(--text-reveal-progress)) * 5px));
     transform: translate3d(0, calc((1 - var(--text-reveal-progress)) * 1.65em), 0);
-    clip-path: inset(0 0 calc((1 - var(--text-reveal-progress)) * 32%) 0);
-    will-change: opacity, filter, transform, clip-path;
+    will-change: opacity, filter, transform;
   }
 
   .home-guide-editorial.is-motion-ready .home-guide-editorial-copy .button {
@@ -1987,6 +2002,21 @@ body.mobile-intro-lock {
   .home-guide-editorial-copy .text-link {
     font-size: clamp(1.02rem, 4.4vw, 1.12rem);
   }
+
+  .home-guide-editorial-item.is-reveal-complete .home-guide-editorial-title,
+  .home-guide-editorial-item.is-reveal-complete .home-guide-editorial-copy {
+    transform: none;
+    will-change: auto;
+  }
+
+  .masked-text-inner.is-reveal-complete,
+  .home-guide-editorial-copy .text-link.is-reveal-complete,
+  .home-guide-editorial.is-motion-ready .home-guide-editorial-copy .button.is-reveal-complete {
+    opacity: 1;
+    filter: none;
+    transform: none;
+    will-change: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1996,6 +2026,7 @@ body.mobile-intro-lock {
     opacity: 1 !important;
     filter: none !important;
     transform: none !important;
+    will-change: auto !important;
   }
 }
 
@@ -2067,7 +2098,7 @@ body.mobile-intro-lock {
 
 .reveal-on-scroll.is-visible {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: none;
 }
 
 .schedule-event.reveal-on-scroll:nth-of-type(odd) {
@@ -2079,7 +2110,7 @@ body.mobile-intro-lock {
 }
 
 .schedule-event.reveal-on-scroll.is-visible {
-  transform: translate3d(0, 0, 0);
+  transform: none;
 }
 
 @media (max-width: 899px) {
@@ -2098,7 +2129,7 @@ body.mobile-intro-lock {
 
   .reveal-on-scroll.is-visible,
   .schedule-event.reveal-on-scroll.is-visible {
-    transform: translate3d(0, 0, 0);
+    transform: none;
   }
 }
 
@@ -4259,7 +4290,7 @@ h3 {
   }
 
   .schedule-event.reveal-on-scroll.is-visible {
-    transform: translate3d(0, 0, 0);
+    transform: none;
   }
 
   .schedule-section {
@@ -7820,7 +7851,10 @@ body {
 
 .home-hero {
   background:
-    url("assets/images/wedding-hero-background.png") center / cover no-repeat,
+    image-set(
+      url("assets/images/wedding-hero-background.webp") type("image/webp"),
+      url("assets/images/wedding-hero-background.png") type("image/png")
+    ) center / cover no-repeat,
     var(--white) !important;
 }
 
@@ -8274,6 +8308,25 @@ body {
 
 .home-hero .hero-content > .countdown {
   margin-top: calc(var(--hero-gap) * .25);
+}
+
+/* Keep mobile hero lettering on the browser's sharp text-rendering layer. */
+@media (max-width: 899px) {
+  .home-hero .hero-content {
+    animation: none;
+    filter: none;
+    transform: none;
+  }
+
+  .home-hero .hero-names,
+  .home-hero .hero-date,
+  .home-hero .hero-location,
+  .home-hero .countdown {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
 }
 
 /* Resilience: preserve navigation and core content if JavaScript is unavailable. */
