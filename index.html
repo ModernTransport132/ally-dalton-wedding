@@ -1,227 +1,218 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <script>document.documentElement.classList.replace("no-js", "js");</script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Ally &amp; Dalton Wedding | April 17, 2027</title>
-  <meta name="description" content="Celebrate Ally Hall and Dalton Vaughan's wedding weekend in Mobile, Alabama on Saturday, April 17, 2027.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fffaf7">
+  <title>Coming Soon | Ally &amp; Dalton</title>
+  <meta name="description" content="Ally and Dalton's wedding website is coming soon. Join us in Mobile, Alabama on April 17, 2027.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ally &amp; Dalton Wedding">
-  <meta property="og:title" content="Ally &amp; Dalton Wedding | April 17, 2027">
-  <meta property="og:description" content="Celebrate Ally Hall and Dalton Vaughan's wedding weekend in Mobile, Alabama on Saturday, April 17, 2027.">
-  <meta property="og:url" content="https://moderntransport132.github.io/ally-dalton-wedding/">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:title" content="Ally &amp; Dalton | Coming Soon">
+  <meta property="og:description" content="Our wedding website is coming soon. April 17, 2027 in Mobile, Alabama.">
+  <meta property="og:url" content="https://www.allyanddalton2027.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Lora:wght@400;500;600&family=Luxurious+Script&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/images/wedding-hero-background.webp" type="image/webp" fetchpriority="high">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&amp;family=Luxurious+Script&amp;family=Manrope:wght@600;700&amp;display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/logos/wedding-logo-navy.png">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --navy: #172f60;
+      --blue: #b0d5f0;
+      --green: #cbdea7;
+      --blush: #f4c0af;
+      --paper: #fffaf7;
+      --white: #ffffff;
+      --muted: #52617a;
+      --line: rgba(23, 47, 96, .18);
+      --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --script: "Luxurious Script", "Brush Script MT", cursive;
+      --sans: "Manrope", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      background: var(--paper);
+    }
+
+    body {
+      min-height: 100vh;
+      min-height: 100svh;
+      margin: 0;
+      color: var(--navy);
+      font-family: var(--serif);
+      text-rendering: optimizeLegibility;
+    }
+
+    ::selection {
+      background: var(--blush);
+      color: var(--navy);
+    }
+
+    .coming-soon {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      min-height: 100vh;
+      min-height: 100svh;
+      padding: clamp(1rem, 3vw, 2.5rem);
+      place-items: center;
+      overflow: hidden;
+      background: var(--paper) url("assets/images/blue-floral-hero.webp") center / cover no-repeat;
+    }
+
+    .coming-soon::before {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      content: "";
+      background: rgba(255, 250, 247, .72);
+    }
+
+    .coming-soon::after {
+      position: absolute;
+      inset: clamp(.8rem, 2.2vw, 1.8rem);
+      z-index: -1;
+      content: "";
+      border: 1px solid var(--line);
+      box-shadow: inset 0 0 0 8px rgba(255, 255, 255, .28);
+      pointer-events: none;
+    }
+
+    .announcement {
+      width: min(700px, calc(100vw - clamp(3.5rem, 10vw, 8rem)));
+      padding: clamp(2.25rem, 6vw, 4.5rem) clamp(1.5rem, 6vw, 4rem);
+      background: rgba(255, 250, 247, .88);
+      text-align: center;
+      box-shadow: 0 22px 52px rgba(23, 47, 96, .12);
+      animation: invitation-arrival 1s cubic-bezier(.16, 1, .3, 1) both;
+    }
+
+    .monogram {
+      display: block;
+      width: clamp(5rem, 12vw, 7.5rem);
+      height: auto;
+      margin: 0 auto clamp(1.25rem, 3vw, 2rem);
+    }
+
+    h1 {
+      margin: 0 0 clamp(1.25rem, 3vw, 2rem);
+      font-family: var(--script);
+      font-size: clamp(4.5rem, 11vw, 6rem);
+      font-weight: 400;
+      letter-spacing: .02em;
+      line-height: .78;
+      text-wrap: balance;
+    }
+
+    .message {
+      margin: 0 auto .9rem;
+      max-width: 19ch;
+      font-size: clamp(2.1rem, 4.8vw, 3.05rem);
+      font-weight: 300;
+      line-height: 1.08;
+      text-wrap: balance;
+    }
+
+    .note {
+      max-width: 52ch;
+      margin: 0 auto clamp(1.75rem, 4vw, 2.5rem);
+      color: var(--muted);
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.68;
+      text-wrap: pretty;
+    }
+
+    .details {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem 1rem;
+      margin: 0;
+      font-family: var(--sans);
+      font-size: .84rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .details-separator {
+      width: .32rem;
+      height: .32rem;
+      border-radius: 50%;
+      background: var(--blush);
+    }
+
+    @keyframes invitation-arrival {
+      from {
+        opacity: 0;
+        clip-path: inset(7% 0 7% 0);
+        transform: translateY(1rem);
+      }
+      to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .announcement {
+        width: calc(100vw - 3.25rem);
+        padding-block: clamp(2rem, 8vh, 3.5rem);
+        padding-inline: 1.35rem;
+      }
+
+      .details {
+        flex-direction: column;
+        gap: .35rem;
+      }
+
+      .details-separator {
+        width: 1.5rem;
+        height: 1px;
+        border-radius: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .announcement { animation: none; }
+    }
+
+    @media (forced-colors: active) {
+      .coming-soon { background: Canvas; }
+      .coming-soon::before { background: transparent; }
+      .coming-soon::after,
+      .announcement { border: 1px solid CanvasText; box-shadow: none; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <div class="mobile-intro" data-mobile-intro aria-label="Opening wedding invitation animation" aria-hidden="true">
-    <video class="mobile-intro-video" data-mobile-intro-video muted playsinline preload="none">
-      <source data-mobile-intro-source data-src="assets/video/wedding-mobile-intro.mp4" type="video/mp4">
-    </video>
-    <button class="mobile-intro-skip" type="button" data-mobile-intro-skip>Skip</button>
-  </div>
-  <div class="site-frame" aria-hidden="true">
-    <span class="site-frame-mark">A<br>&amp;<br>D</span>
-    <span class="site-frame-date">Apr<br>17<br>2027</span>
-    <span class="site-frame-place">Mobile, AL</span>
-  </div>
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
-      <a class="brand" href="index.html" aria-label="Alexandra and Dalton home"><img src="assets/logos/wedding-logo-navy.png" alt="Alexandra and Dalton wedding logo" width="857" height="642" decoding="async"></a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Toggle navigation menu">
-        <span class="nav-toggle-line"></span>
-        <span class="sr-only">Menu</span>
-      </button>
-      <ul class="nav-menu" id="site-menu">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="venues.html">Venues</a></li>
-        <li><a href="lodging.html">Lodging</a></li>
-        <li><a href="travel.html">Travel</a></li>
-        <li><a href="wedding-party.html">Wedding Party</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="registry.html">Registry</a></li>
-        <li><a href="faqs.html">FAQs</a></li>
-        <li><a class="nav-rsvp" href="rsvp.html">RSVP</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero home-hero">
-      <div class="hero-floral hero-floral-left" aria-hidden="true"></div>
-      <div class="hero-floral hero-floral-right" aria-hidden="true"></div>
-      <div class="hero-content">
-        <h1 class="hero-names hero-names-live-monumental" aria-label="Alexandra and Dalton"><span class="hero-name-line">Alexandra</span><span class="hero-and">and</span><span class="hero-name-line">Dalton</span></h1>
-        <p class="hero-date">April 17, 2027</p>
-        <p class="hero-location">Mobile, Alabama</p>
-        <div class="countdown" role="timer" aria-live="off" aria-label="Countdown to the wedding ceremony" data-countdown-target="2027-04-17T14:00:00-05:00">
-          <div class="countdown-item"><span class="countdown-value" data-countdown-days>000</span><span class="countdown-label">Days</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-countdown-hours>00</span><span class="countdown-label">Hours</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-countdown-minutes>00</span><span class="countdown-label">Minutes</span></div>
-          <div class="countdown-item"><span class="countdown-value" data-countdown-seconds>00</span><span class="countdown-label">Seconds</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-column-reveal" data-column-reveal aria-labelledby="home-column-reveal-title">
-      <div class="home-column-reveal-sticky">
-        <div class="home-column-reveal-images" aria-hidden="true">
-          <figure class="home-column-reveal-image home-column-reveal-image-left">
-            <picture>
-              <source srcset="assets/images/childhood-portrait-ally-640.webp 640w, assets/images/childhood-portrait-ally.webp 945w" sizes="(max-width: 899px) min(68vw, 275px), 35vw" type="image/webp">
-              <img class="home-column-reveal-ally" src="assets/images/childhood-portrait-ally.png" alt="" width="945" height="1325" loading="lazy" decoding="async">
-            </picture>
-          </figure>
-          <figure class="home-column-reveal-image home-column-reveal-image-center">
-            <picture>
-              <source srcset="assets/images/childhood-portrait-640.webp 640w, assets/images/childhood-portrait.webp 1170w" sizes="(max-width: 899px) min(68vw, 275px), 35vw" type="image/webp">
-              <img src="assets/images/childhood-portrait.png" alt="" width="1170" height="1580" loading="lazy" decoding="async">
-            </picture>
-          </figure>
-          <figure class="home-column-reveal-image home-column-reveal-image-right">
-            <picture>
-              <source srcset="assets/images/engagement-beach-portrait-640.webp 640w, assets/images/engagement-beach-portrait.webp 1024w" sizes="(max-width: 899px) min(68vw, 275px), 35vw" type="image/webp">
-              <img src="assets/images/engagement-beach-portrait.jpg" alt="" width="1024" height="1536" loading="lazy" decoding="async">
-            </picture>
-          </figure>
-        </div>
-        <div class="home-column-reveal-copy">
-          <h2 id="home-column-reveal-title">We cannot wait to celebrate with you.</h2>
-          <p>
-            Bringing together the family and friends we love most is one of the most meaningful parts of this
-            celebration. We cannot wait to welcome you to Mobile and share the weekend with you.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-guide-editorial" data-guide-editorial aria-label="Guest guide">
-      <div class="home-guide-editorial-pause" aria-hidden="true"></div>
-      <div class="home-guide-editorial-list">
-        <article class="home-guide-editorial-item">
-          <div class="home-guide-editorial-title">
-            <h3>The full weekend timeline</h3>
-          </div>
-          <div class="home-guide-editorial-copy">
-            <p>See where to be and when, from the first gathering through the last dance.</p>
-            <a class="button button-secondary home-venue-button" href="schedule.html">View Schedule</a>
-          </div>
-        </article>
-        <article class="home-guide-editorial-item">
-          <div class="home-guide-editorial-title">
-            <h3>The places that shape the celebration</h3>
-          </div>
-          <div class="home-guide-editorial-copy">
-            <p>Find church, reception, and weekend venue details with addresses and notes for guests.</p>
-            <a class="button button-secondary home-venue-button" href="venues.html">Explore Venues</a>
-          </div>
-        </article>
-        <article class="home-guide-editorial-item">
-          <div class="home-guide-editorial-title">
-            <h3>Where to stay in Mobile</h3>
-          </div>
-          <div class="home-guide-editorial-copy">
-            <p>Review hotel options, local context, and the details that make booking easier.</p>
-            <a class="button button-secondary home-venue-button" href="lodging.html">View Lodging</a>
-          </div>
-        </article>
-        <article class="home-guide-editorial-item">
-          <div class="home-guide-editorial-title">
-            <h3>Getting here smoothly</h3>
-          </div>
-          <div class="home-guide-editorial-copy">
-            <p>Compare airport options, drive times, and travel notes for guests coming to the Gulf Coast.</p>
-            <a class="button button-secondary home-venue-button" href="travel.html">Plan Travel</a>
-          </div>
-        </article>
-        <article class="home-guide-editorial-item">
-          <div class="home-guide-editorial-title">
-            <h3>The people standing beside us</h3>
-          </div>
-          <div class="home-guide-editorial-copy">
-            <p>Meet the family and friends who will be closest to us throughout the day.</p>
-            <a class="button button-secondary home-venue-button" href="wedding-party.html">Meet the Party</a>
-          </div>
-        </article>
-        <article class="home-guide-editorial-item">
-          <div class="home-guide-editorial-title">
-            <h3>Gift details in one place</h3>
-          </div>
-          <div class="home-guide-editorial-copy">
-            <p>Find registry notes and links for anyone who would like to help us begin married life.</p>
-            <a class="button button-secondary home-venue-button" href="registry.html">View Registry</a>
-          </div>
-        </article>
-        <article class="home-guide-editorial-item">
-          <div class="home-guide-editorial-title">
-            <h3>Answers before the weekend</h3>
-          </div>
-          <div class="home-guide-editorial-copy">
-            <p>See answers to frequently asked questions here.</p>
-            <a class="button button-secondary home-venue-button" href="faqs.html">Read FAQs</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section home-venue-story">
-      <div class="section-inner home-split">
-        <div class="home-image-stack" aria-label="Wedding weekend venue photos">
-          <picture class="placeholder-image home-photo-main">
-            <source srcset="assets/images/st-ignatius-banner.webp" type="image/webp">
-            <img src="assets/images/st-ignatius-banner.png" alt="St. Ignatius Catholic Church exterior" width="1672" height="941" loading="lazy" decoding="async">
-          </picture>
-          <picture class="placeholder-image home-photo-small">
-            <source srcset="assets/images/noja-table-setting.webp" type="image/webp">
-            <img src="assets/images/noja-table-setting.png" alt="NOJA table setting for dinner" width="1085" height="1450" loading="lazy" decoding="async">
-          </picture>
-        </div>
-        <div class="home-copy">
-          <h2>Three meaningful settings for a weekend we&rsquo;ll never forget.</h2>
-          <a class="button button-secondary home-venue-button" href="venues.html">Explore Venues</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section home-gallery-teaser">
-      <div class="section-inner">
-        <div class="section-heading">
-          <h2>Engagement photos and moments to come</h2>
-        </div>
-        <div class="home-gallery-strip" aria-label="Gallery teaser placeholders">
-          <div class="placeholder-image" role="img" aria-label="Engagement photo placeholder"></div>
-          <div class="placeholder-image" role="img" aria-label="Wedding detail photo placeholder"></div>
-          <div class="placeholder-image" role="img" aria-label="Couple portrait placeholder"></div>
-          <div class="placeholder-image" role="img" aria-label="Celebration photo placeholder"></div>
-        </div>
-        <div class="button-row">
-          <a class="button button-primary" href="gallery.html">View Gallery</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section home-rsvp-cta">
-      <div class="section-inner narrow">
-        <h2>We hope you will join us in Mobile.</h2>
-        <p>Please RSVP using the name listed on your invitation once online responses open.</p>
-        <a class="button button-secondary" href="rsvp.html">RSVP</a>
-      </div>
+  <!--
+    THESIS: A finished invitation waiting quietly behind one ceremonial announcement, refusing a generic maintenance screen.
+    OWN-WORLD: Warm paper, invitation navy, blue florals, formal hairlines, script names, and one lifted stationery plane.
+    STORY: Guests recognize Ally and Dalton, learn that the full website is still being prepared, and know to return soon.
+    FIRST VIEWPORT: A full-screen floral paper field frames one centered announcement with monogram, names, message, date, and place.
+    FORM: Precisely specified temporary extension of the established Living Invitation; ranked first; seed key not-applicable-local-extension.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+  -->
+  <main class="coming-soon">
+    <section class="announcement" aria-labelledby="couple-names">
+      <img class="monogram" src="assets/logos/wedding-logo-navy.png" alt="" width="857" height="642">
+      <h1 id="couple-names">Ally &amp; Dalton</h1>
+      <p class="message">Our wedding website is coming soon.</p>
+      <p class="note">We&rsquo;re putting the finishing touches on the details for our celebration. Please check back soon.</p>
+      <p class="details">
+        <span>April 17, 2027</span>
+        <span class="details-separator" aria-hidden="true"></span>
+        <span>Mobile, Alabama</span>
+      </p>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p>Alexandra Hall &amp; Dalton Vaughan</p>
-    <p>Saturday, April 17, 2027 &bull; Mobile, Alabama</p>
-  </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
