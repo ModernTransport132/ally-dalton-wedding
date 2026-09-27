@@ -121,3 +121,6 @@ main h3,main h4 { font-size: var(--entry-title-size); line-height: 1.2; letter-s
   .pick-category,.panel-motion .pick-category { position: relative; top: auto; margin-bottom: 24px; }
   .pick-inner { transform: none; opacity: 1; }
 }
+
+/* Keep the dining, drinks, and activities panels visually consistent. */
+.picks-grid .pick-category.drink{background:#fff}

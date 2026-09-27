@@ -24,7 +24,16 @@
     intro.classList.remove('is-visible');
     document.body.classList.remove('mobile-intro-lock');
     background.forEach((el, i) => { el.inert = previousInert[i]; });
-    if (intro.contains(document.activeElement)) document.querySelector('.skip')?.focus({ preventScroll: true });
+    if (intro.contains(document.activeElement)) {
+      const main = document.querySelector('main');
+      if (main) {
+        const previousTabindex = main.getAttribute('tabindex');
+        main.setAttribute('tabindex', '-1');
+        main.focus({ preventScroll: true });
+        if (previousTabindex === null) main.removeAttribute('tabindex');
+        else main.setAttribute('tabindex', previousTabindex);
+      }
+    }
     intro.setAttribute('aria-hidden', 'true');
     document.removeEventListener('keydown', onKey);
     mobile.removeEventListener('change', onPreferenceChange);

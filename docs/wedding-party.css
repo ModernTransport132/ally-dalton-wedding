@@ -9,3 +9,6 @@ footer{border-top:1px solid var(--line);margin:0 5%;padding:27px 0;display:flex;
 @media(min-width:760px) and (max-width:1099px){.site-header .nav-toggle{display:inline-flex}.site-header .nav-menu{position:absolute;top:72px;left:0;right:0;display:grid;align-items:stretch;max-height:0;opacity:0;visibility:hidden;pointer-events:none;overflow:hidden;padding:1rem;background:white;transform:translateY(-10px)}.site-header .nav-menu.is-open{max-height:calc(100svh - 72px);opacity:1;visibility:visible;pointer-events:auto;overflow:auto;transform:none}.site-header .nav-menu a{display:block}.site-header .nav-menu li{opacity:1;transform:none}}
 @media(max-width:759px){:root{--chrome-height:66px}}@media(max-width:600px){.intro p{font-size:20px}.person-name{font-size:25px;min-height:53px}.initial{font-size:72px}.stage-bottom{font-size:15px}.view-toggle{font-size:16px}.all-visible .person-name{font-size:21px;min-height:46px}.all-visible .initial{font-size:55px}.all-visible .portrait{padding-inline:0}.scroll-cue{max-width:155px}}
 .stage>div{flex-shrink:0}.long-given{white-space:nowrap;font-size:.87em}.all-visible .long-given{font-size:.82em}
+
+/* Moving portraits must not become browser scroll anchors. */
+.ribbon-section{overflow-anchor:none}
