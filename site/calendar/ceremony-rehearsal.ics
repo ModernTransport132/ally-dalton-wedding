@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Alexandra and Dalton//Wedding Schedule//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:ally-dalton-ceremony-rehearsal-2027@wedding.local
+DTSTAMP:20260926T203235Z
+DTSTART:20270416T220000Z
+DTEND:20270416T230000Z
+SEQUENCE:1
+SUMMARY:Alexandra & Dalton — Ceremony Rehearsal
+LOCATION:St. Ignatius Catholic Church\, 3704 Spring Hill Avenue\, Mobi
+ le\, AL 36608
+DESCRIPTION:Wedding party and immediate family. All times are local to
+  Mobile (America/Chicago).
+URL:https://www.google.com/maps/search/?api=1&query=3704%20Spring%20Hi
+ ll%20Avenue%2C%20Mobile%2C%20AL%2036608
+END:VEVENT
+END:VCALENDAR

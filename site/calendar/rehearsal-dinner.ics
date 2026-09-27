@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Alexandra and Dalton//Wedding Schedule//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:ally-dalton-rehearsal-dinner-2027@wedding.local
+DTSTAMP:20260926T203235Z
+DTSTART:20270416T233000Z
+DTEND:20270417T023000Z
+SEQUENCE:1
+SUMMARY:Alexandra & Dalton — Rehearsal Dinner
+LOCATION:NOJA\, 6 North Jackson Street\, Mobile\, AL 36602
+DESCRIPTION:Cocktail attire. All times are local to Mobile (America/Ch
+ icago).
+URL:https://www.google.com/maps/search/?api=1&query=6%20North%20Jackso
+ n%20Street%2C%20Mobile%2C%20AL%2036602
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,8 @@
+{
+  "name": "vaughan-wedding",
+  "private": true,
+  "scripts": {
+    "build": "node site/tools/build.cjs --output .",
+    "check": "node site/tools/check.cjs docs"
+  }
+}

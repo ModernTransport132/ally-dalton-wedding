@@ -1,0 +1,332 @@
+:root{--navy:#172f60;--blue:#b0d5f0;--ivory:#fffaf7;--muted:#52617a;--line:#dbe2ed;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Manrope',Arial,sans-serif;--script:'Luxurious Script',cursive}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:36px}
+body{margin:0;color:var(--navy);background:#fff;font-family:var(--serif);font-size:21px;line-height:1.5}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,h3{font-weight:400}
+h2{font-size:clamp(55px,6.8vw,105px);letter-spacing:-.045em;line-height:.98}
+h2 em{font-weight:400}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+button,a{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible{outline:2px solid var(--navy);outline-offset:6px}
+button{border:0;background:none}
+.eyebrow{font:10px/1.7 var(--sans);letter-spacing:.2em}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+.skip{position:fixed;top:-80px;left:20px;z-index:99;background:white;padding:12px;font:14px var(--sans)}
+.skip:focus{top:0}
+.hero{height:100svh;min-height:700px;position:relative;overflow:hidden;background:linear-gradient(#fff 70%,#fffaf740)}
+.hero-intro{position:absolute;top:20%;left:0;width:100%;text-align:center}
+.hero h1{font-size:clamp(110px,14.5vw,225px);line-height:.82;letter-spacing:-.055em}
+.alexandra{position:absolute;top:29%;left:14%}
+.dalton{position:absolute;top:46%;right:15%;font-size:1.12em}
+.and{position:absolute;left:41%;top:46%;font:clamp(42px,5.5vw,90px)/1 var(--script);letter-spacing:0}
+.hero-details{position:absolute;top:76%;width:100%;text-align:center}
+.date{font:13px 'Lora',Georgia,serif;letter-spacing:.025em}
+.location{font:35px/1.5 var(--script);margin-top:5px}
+.hero-foot{position:absolute;left:5vw;right:5vw;bottom:4%;display:flex;justify-content:space-between;font:8px var(--sans);letter-spacing:.15em;border-top:1px solid var(--line);padding-top:20px}
+.hero-foot a span{margin-left:22px;font-size:18px}
+.story{position:relative;background:#fff}
+.story-stage{padding:80px 7vw}
+.story-kicker{text-align:center;margin-bottom:45px}
+.photo-sequence{display:flex;gap:5%;align-items:start}
+.portrait{width:30%}
+.portrait img{width:100%;height:auto;display:block}
+.portrait figcaption{font:12px var(--sans);margin-top:14px;letter-spacing:.05em}
+.welcome-copy{margin:80px auto 0;max-width:540px}
+.welcome-copy h2{margin:24px 0 30px}
+.welcome-copy>p:not(.eyebrow){max-width:365px;color:var(--muted);font-size:20px;line-height:1.5;margin-bottom:15px}
+.signature{display:block;font:40px/1.2 var(--script);margin-top:25px}
+.js:not(.reduce-motion) .story{height:280svh}
+.js:not(.reduce-motion) .story-stage{height:100svh;min-height:640px;position:sticky;top:0;padding:0;overflow:hidden}
+.js:not(.reduce-motion) .story-kicker{position:absolute;left:0;top:7%;width:100%}
+.js:not(.reduce-motion) .portrait{position:absolute;width:25%;height:58%;top:18%;left:7%;will-change:transform,width,height,left,top}
+.js:not(.reduce-motion) .portrait-dalton{left:37.5%;top:25%}
+.js:not(.reduce-motion) .portrait-together{left:68%;top:32%}
+.js:not(.reduce-motion) .portrait img{height:calc(100% - 32px);object-fit:cover;object-position:50% 42%}
+.js:not(.reduce-motion) .portrait-together img{object-position:50% 48%}
+.js:not(.reduce-motion) .welcome-copy{position:absolute;left:8%;top:20%;width:43%;max-width:520px;margin:0;clip-path:inset(100% 0 0 0);will-change:clip-path,transform}
+.js:not(.reduce-motion) .welcome-copy h2{font-size:clamp(52px,6.5vw,100px)}
+.section-space{padding:120px 8vw}
+.weekend-head{display:flex;justify-content:space-between;align-items:end;gap:30px}
+.weekend-head h2{margin-top:26px}
+.weekend-head>p{font-size:21px;color:var(--muted);padding-bottom:7px}
+.guest-links{margin-top:65px}
+.guest-links>a{display:grid;grid-template-columns:60px 1.4fr 1fr 35px;gap:25px;align-items:center;border-top:1px solid var(--line);padding:31px 0}
+.guest-links>a:last-child{border-bottom:1px solid var(--line)}
+.index{font:10px var(--sans);color:var(--muted)}
+.guest-links h3{font-size:38px;letter-spacing:-.025em;line-height:1.15}
+.guest-links p{font-size:18px;color:var(--muted)}
+.arrow{font-size:25px;transition:transform .3s}
+.guest-links>a:hover .arrow{transform:translate(4px,-4px)}
+.places{padding:30px 6vw 80px}
+.places-title{text-align:center;margin-bottom:70px}
+.places-title h2{margin-top:20px}
+.venue-composition{position:relative;min-height:880px;max-width:1400px;margin:auto}
+.church{width:81%;overflow:hidden}
+.church img{display:block;width:100%;height:auto}
+.church figcaption{display:flex;justify-content:space-between;font:8px var(--sans);letter-spacing:.14em;margin-top:18px}
+.dinner{position:absolute;right:0;top:220px;width:28%;margin:0}
+.dinner img{display:block;width:100%;height:auto;border:12px solid white}
+.dinner figcaption{font:8px var(--sans);letter-spacing:.12em;margin-top:6px;text-align:center}
+.places-note{margin:60px 0 0 10%;font-size:34px;line-height:1.3;letter-spacing:-.025em}
+.places-note p em{font-weight:400}
+.text-link{display:inline-block;padding:9px 0;border-bottom:1px solid var(--navy);font:11px var(--sans);letter-spacing:0;margin-top:25px}
+.text-link span{margin-left:25px}
+.more{padding-top:40px;padding-bottom:100px}
+.more-links{display:flex;justify-content:space-between;gap:30px;padding:30px 0;border-bottom:1px solid var(--line);margin-top:12px}
+.more-links a,.more-links button{font:27px var(--serif);padding:0}
+.more-links span{font:17px var(--serif);margin-left:16px}
+.more-links a:hover,.more-links button:hover{font-style:italic}
+.link-note{font:9px var(--sans);color:var(--muted);margin-top:18px}
+.rsvp{padding:100px 8vw 25px;text-align:center;background:#f2f7fb}
+.rsvp h2{font-family:var(--script);font-size:clamp(85px,10vw,155px);letter-spacing:0;line-height:1.1;margin:35px 0}
+.rsvp h2 span{font:inherit;letter-spacing:inherit}
+.rsvp>p:not(.eyebrow){font-size:21px}
+.rsvp-link{font:11px var(--sans);border-bottom:1px solid var(--navy);padding:13px 0;margin-top:25px}
+.rsvp-link span{margin-left:30px}
+.closing-date{display:flex;align-items:center;justify-content:center;gap:24px;margin-top:55px}
+.closing-date span{font:9px var(--sans);letter-spacing:.18em}
+.closing-date strong{font:60px/1 var(--serif)}
+dialog{color:var(--navy);background:white;border:0;padding:58px;width:min(540px,calc(100% - 34px));max-height:90svh;overflow:auto}
+dialog::backdrop{background:#172f6080;backdrop-filter:blur(6px)}
+dialog h2{font-size:65px;margin:25px 0}
+dialog>p:not(.eyebrow){font-size:21px}
+.close{position:absolute;right:15px;top:10px;font:30px var(--sans);padding:6px;z-index:3}
+.preview-note{font:10px/1.7 var(--sans)!important;color:var(--muted);margin-top:25px}
+#gallery-dialog{padding:0;width:min(630px,calc(100% - 28px));background:var(--ivory)}
+#gallery-dialog .close{background:#fffdf9de;border-radius:50%;width:40px;height:40px;line-height:1}
+.gallery-image{height:68svh;padding:25px 45px 0}
+.gallery-image img{width:100%;height:100%;object-fit:contain}
+.gallery-bottom{display:flex;align-items:center;justify-content:space-between;padding:20px 40px}
+.gallery-bottom>button{width:45px;height:45px;border:1px solid var(--line);border-radius:50%}
+.gallery-bottom>div{text-align:center}
+.gallery-bottom p{font-size:25px}
+.gallery-bottom span{font:9px var(--sans)}
+@media(min-width:1700px){.section-space{padding-left:max(8vw,calc((100vw - 1400px)/2));padding-right:max(8vw,calc((100vw - 1400px)/2))}
+.venue-composition{min-height:1000px}
+}
+@media(max-width:760px){body{font-size:19px}
+.hero{min-height:680px;height:95svh}
+.hero-intro{top:22%;font-size:8px}
+.hero h1{font-size:23.4vw}
+.alexandra{left:5%;top:33%}
+.dalton{right:9%;top:49%;font-size:1.24em}
+.and{left:23%;top:48%;font-size:44px}
+.hero-details{top:72%}
+.date{font-size:12px}
+.location{font-size:32px}
+.hero-foot{font-size:6px;letter-spacing:.1em;bottom:4%;left:6vw;right:6vw}
+.hero-foot a span{font-size:15px;margin-left:8px}
+.js:not(.reduce-motion) .story{height:300svh}
+.js:not(.reduce-motion) .story-stage{min-height:690px}
+.js:not(.reduce-motion) .story-kicker{top:6%;font-size:7px}
+.js:not(.reduce-motion) .portrait{width:65%;height:51%;left:8%;top:16%}
+.js:not(.reduce-motion) .portrait-dalton{left:25%;top:110%}
+.js:not(.reduce-motion) .portrait-together{left:12%;top:110%}
+.portrait figcaption{font-size:9px;margin-top:9px}
+.js:not(.reduce-motion) .welcome-copy{left:8%;top:59%;width:84%;text-align:center}
+.js:not(.reduce-motion) .welcome-copy h2{font-size:43px;line-height:.92;margin:15px 0}
+.welcome-copy>.eyebrow{font-size:7px}
+.js:not(.reduce-motion) .welcome-copy h2 br:first-child{display:none}
+.js:not(.reduce-motion) .welcome-copy>p:not(.eyebrow){font-size:15px;max-width:290px;margin:0 auto 8px;line-height:1.4}
+.signature{font-size:30px;margin-top:10px}
+.section-space{padding:75px 7vw}
+.weekend-head{display:block}
+.weekend-head h2{font-size:53px;margin-top:18px}
+.weekend-head>p{font-size:18px;margin-top:25px}
+.weekend-head>p br{display:none}
+.guest-links{margin-top:35px}
+.guest-links>a{grid-template-columns:25px 1fr 22px;gap:14px;padding:25px 0}
+.guest-links h3{font-size:30px}
+.guest-links p{grid-column:2;font-size:17px}
+.guest-links .arrow{grid-column:3;grid-row:1 / span 2}
+.guest-links .index{grid-row:1 / span 2;font-size:8px}
+.places{padding:35px 6vw 50px}
+.places-title{margin-bottom:35px}
+.places-title h2{font-size:56px}
+.venue-composition{min-height:0}
+.church{width:100%}
+.church figcaption{font-size:6px;margin-top:12px}
+.church figcaption span:last-child{display:none}
+.dinner{position:relative;width:56%;margin:-20px 0 0 auto;top:auto;right:auto}
+.dinner img{border-width:7px}
+.dinner figcaption{font-size:6px}
+.places-note{margin:-80px 0 0 0;font-size:23px;max-width:47%;position:relative}
+.places-note p em{display:block;margin-top:8px}
+.places-note .text-link{font-size:9px;margin-top:15px}
+.places-note .text-link span{margin-left:6px}
+.more{padding-top:50px;padding-bottom:65px}
+.more-links{display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;padding:25px 0}
+.more-links a,.more-links button{font-size:23px;text-align:left}
+.more-links span{font-size:13px;margin-left:5px}
+.link-note{font-size:8px;line-height:1.7}
+.rsvp{padding:75px 7vw 20px}
+.rsvp h2{font-size:76px;margin:30px 0}
+.rsvp>p:not(.eyebrow){font-size:19px}
+.rsvp .eyebrow{font-size:8px}
+.rsvp-link{font-size:10px}
+dialog{padding:45px 28px}
+dialog h2{font-size:55px}
+.gallery-image{padding:25px 20px 0;height:62svh}
+.gallery-bottom{padding:18px 24px}
+.story-stage{padding:60px 7vw}
+.photo-sequence{gap:4%;flex-wrap:wrap;justify-content:center}
+.portrait{width:48%}
+.portrait-together{width:76%;margin-top:25px}
+.welcome-copy{margin-top:50px}
+.welcome-copy h2{font-size:55px}
+.welcome-copy>p:not(.eyebrow){font-size:19px}
+}
+.reduce-motion{scroll-behavior:auto}
+.reduce-motion .arrow{transition:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+.arrow{transition:none}
+}
+.and{left:36%}
+@media(max-width:760px){.and{left:44%;top:43%}
+}
+.original-hero{height:auto;min-height:calc(100svh - 72px);display:grid;place-items:center;padding:30px 20px;background:#fff url('assets/hero-background.webp') center/cover no-repeat}
+.original-hero .hero-content{width:min(760px,100%);text-align:center;display:grid;justify-items:center;gap:25px}
+.original-hero h1{font:96px/.82 var(--script);letter-spacing:.075em;display:grid;gap:25px;position:static}
+.original-hero h1>span{position:static;display:block;font:inherit}
+.original-hero h1>.hero-and{font-size:54px;letter-spacing:0;line-height:.8}
+.original-hero .hero-date{font:500 26px var(--serif);margin-top:6px}
+.original-hero .hero-location{font:42px/1.2 var(--script);margin-top:4px}
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;width:100%;margin-top:5px}
+.countdown>div{border:1px solid #172f6060;background:#ffffff94;padding:16px 10px}
+.countdown span{font:italic 45px/1.1 var(--serif)}
+.countdown small{display:block;font:10px var(--sans);text-transform:uppercase;letter-spacing:.12em;margin-top:10px}
+.js:not(.reduce-motion) .portrait img{height:100%}
+.js:not(.reduce-motion) .welcome-copy{top:24%}
+.welcome-copy h2{margin-top:0}
+.weekend-title{text-align:center;font-size:55px;line-height:1.1;margin-bottom:50px}
+.guest-guide{display:grid;grid-template-columns:repeat(3,1fr);gap:0;text-align:center}
+.guest-guide article{padding:5px 30px}
+.guest-guide article+article{border-left:1px solid var(--line)}
+.guest-guide h3{font-size:34px;letter-spacing:-.025em}
+.guest-guide p{font-size:20px;color:var(--muted);margin:14px 0 25px;line-height:1.5}
+.action{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 26px;border:1px solid #172f6075;border-radius:999px;font:11px var(--sans);letter-spacing:.02em;background:transparent;color:var(--navy);text-decoration:none;transition:background .2s,color .2s,border-color .2s;margin-top:0}
+.action:hover{background:var(--navy);color:white;border-color:var(--navy)}
+.places-title{margin-bottom:55px}
+.places-title h2{margin-top:0}
+.places-note .action{margin-top:28px}
+.more-links a,.more-links button{font:12px var(--sans);border:1px solid var(--line);border-radius:999px;padding:14px 23px;text-align:center;display:flex;align-items:center;justify-content:center;min-height:46px;transition:background .2s,color .2s}
+.more-links a:hover,.more-links button:hover{background:var(--navy);color:#fff;font-style:normal}
+.rsvp-link.action{margin-top:28px}
+.dismiss.action{margin-top:28px}
+.more-links{border:0;padding-bottom:10px}
+.js:not(.reduce-motion) .welcome-copy>p:not(.eyebrow){max-width:385px}
+.venue-composition{min-height:810px}
+@media(max-width:760px){.original-hero{min-height:calc(100svh - 66px);padding:30px 7vw}
+.original-hero .hero-content{gap:24px}
+.original-hero h1{font-size:clamp(70px,20vw,88px);gap:24px}
+.original-hero h1>.hero-and{font-size:44px}
+.original-hero .hero-date{font-size:24px;margin-top:8px}
+.original-hero .hero-location{font-size:36px;margin-top:2px}
+.countdown{grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+.countdown>div{padding:13px 8px}
+.countdown span{font-size:36px}
+.countdown small{font-size:9px;margin-top:7px}
+.js:not(.reduce-motion) .welcome-copy{top:60%}
+.js:not(.reduce-motion) .welcome-copy h2{margin-top:0}
+.js:not(.reduce-motion) .welcome-copy>p:not(.eyebrow){font-size:16px;line-height:1.4;max-width:300px}
+.weekend-title{font-size:43px;margin-bottom:34px}
+.guest-guide{grid-template-columns:1fr;gap:0}
+.guest-guide article{padding:30px 5px}
+.guest-guide article+article{border-left:0;border-top:1px solid var(--line)}
+.guest-guide h3{font-size:32px}
+.guest-guide p{font-size:19px;margin:10px 0 20px}
+.guest-guide p br{display:none}
+.action{font-size:11px;min-height:46px;padding:12px 25px}
+.places-title{margin-bottom:35px}
+.venue-composition{min-height:0}
+.church{width:90%}
+.dinner{width:57%;margin-top:-65px;margin-right:0;position:relative;z-index:1}
+.dinner img{border:8px solid white}
+.places-note{margin:30px 0 0 0;max-width:none;text-align:center;font-size:27px}
+.places-note p em{margin-top:0}
+.places-note .action{font-size:11px;margin-top:22px}
+.more-links{gap:12px;grid-template-columns:1fr 1fr}
+.more-links a,.more-links button{padding:13px 10px;font-size:10px}
+.link-note{text-align:center}
+}
+.reduce-motion .action,.reduce-motion .more-links a,.reduce-motion .more-links button{transition:none}
+@media(prefers-reduced-motion:reduce){.action,.more-links a,.more-links button{transition:none}
+}
+.action,.more-links a,.more-links button{position:relative;display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:52px;padding:12px 0 15px;border:0;border-radius:0;background:transparent;color:var(--navy);font:23px var(--serif);letter-spacing:0;text-align:left;transition:none;touch-action:manipulation}
+.action:hover,.more-links a:hover,.more-links button:hover{background:transparent;color:var(--navy);font-style:normal}
+.action:active,.more-links a:active,.more-links button:active{color:#446a92}
+.button-arrow{display:block;width:20px;height:14px;flex-shrink:0;margin:0!important}
+.button-arrow svg{display:block;width:20px;height:14px}
+.button-line{position:absolute;bottom:0;left:0;right:0;height:1px;background:currentColor;transform-origin:left;margin:0!important}
+.tap-playing .button-line{animation:button-draw 650ms ease-in-out}
+.more-links{flex-wrap:wrap}
+.more-links a,.more-links button{width:max-content;max-width:100%}
+@media(max-width:760px){.places-note .action{font-size:23px}
+.more-links{grid-template-columns:1fr;justify-items:center;gap:18px}
+}
+.reduce-motion .button-line{animation:none!important}
+@media(prefers-reduced-motion:reduce){.button-line{animation:none!important}
+}
+.weekend{padding-block:150px}
+.weekend-title{margin-bottom:75px}
+.weekend-title span{white-space:nowrap}
+.guest-guide article{padding-block:25px}
+.dinner img{aspect-ratio:1;object-fit:cover;object-position:50% 54%;height:auto}
+.more-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 55px;width:min(720px,100%);margin:0 auto;padding:0}
+.more-links a,.more-links button{width:100%;min-height:62px;padding:17px 0;justify-content:space-between}
+.weekend.reveal-ready .weekend-title,.weekend.reveal-ready .guest-guide article{opacity:0;transform:translateY(28px);transition:opacity 850ms ease,transform 850ms cubic-bezier(.2,.65,.3,1)}
+.weekend.reveal-ready .in-view{opacity:1!important;transform:none!important}
+@media(max-width:760px){.weekend{padding-block:115px 125px}
+.weekend-title{font-size:45px;line-height:1.04;margin-bottom:55px}
+.weekend-title span{display:block}
+.guest-guide article{padding:55px 5px}
+.guest-guide p{margin:16px 0 30px}
+.dinner img{aspect-ratio:6/5;object-position:50% 55%}
+.dinner{margin-top:-55px}
+.places-note{margin-top:36px}
+.more{padding-block:65px 90px}
+.more-links{grid-template-columns:1fr;width:min(290px,100%);gap:12px}
+}
+.reduce-motion .weekend.reveal-ready .weekend-title,.reduce-motion .weekend.reveal-ready .guest-guide article{opacity:1;transform:none;transition:none}
+@media(prefers-reduced-motion:reduce){.weekend.reveal-ready .weekend-title,.weekend.reveal-ready .guest-guide article{opacity:1;transform:none;transition:none}
+}
+
+@keyframes button-draw{0%{transform:scaleX(1)}22%{transform:scaleX(0)}100%{transform:scaleX(1)}}
+
+/* Weekend guide and welcome readability. */
+.guest-guide{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:50px;max-width:1000px;margin-inline:auto}.guest-guide article:nth-child(3){border-left:0}.guest-guide p{max-width:310px;margin-inline:auto}.more-links{grid-template-columns:repeat(3,minmax(0,1fr));width:min(900px,100%);gap:35px}.rsvp{padding-bottom:75px}
+@media(max-width:760px){.guest-guide{grid-template-columns:1fr;row-gap:0}.more-links{grid-template-columns:1fr;width:min(290px,100%);gap:12px}.welcome-copy>p:not(.eyebrow),.js:not(.reduce-motion) .welcome-copy>p:not(.eyebrow){font-size:19px;line-height:1.5;max-width:340px}.js:not(.reduce-motion) .welcome-copy{top:60%}.js:not(.reduce-motion) .story-stage{min-height:880px}.rsvp{padding-bottom:65px}}
+
+/* Small, cropped photo collage with overlapping edges at every size. */
+.gallery-preview{padding:65px 6vw 80px;text-align:center}.gallery-collage{position:relative;width:min(760px,100%);height:355px;margin:0 auto 32px}.collage-photo{position:absolute;overflow:hidden;border:7px solid white;background:#eef1f5;box-shadow:0 8px 24px #172f6012}.collage-photo img{display:block;width:100%;height:100%;object-fit:cover}.collage-ally{left:5%;top:12px;width:34%;height:235px;transform:rotate(-7deg);z-index:1}.collage-ally img{object-position:50% 65%}.collage-together{left:32%;top:66px;width:38%;height:270px;transform:rotate(3deg);z-index:3}.collage-together img{object-position:50% 25%}.collage-dalton{right:1%;top:28px;width:34%;height:220px;transform:rotate(8deg);z-index:2}.collage-dalton img{object-position:50% 72%}.gallery-preview>.action{margin:0}.more-links{grid-template-columns:repeat(2,minmax(0,1fr));width:min(600px,100%)}
+@media(max-width:760px){.gallery-preview{padding:45px 6vw 65px}.gallery-collage{height:242px;margin-bottom:25px;width:min(370px,100%)}.collage-photo{border-width:4px}.collage-ally{left:1%;top:10px;width:43%;height:147px}.collage-together{left:25%;top:68px;width:52%;height:163px}.collage-dalton{right:0;top:24px;width:42%;height:144px}.more-links{grid-template-columns:1fr;width:min(290px,100%)}.more{padding-top:25px}}
+
+/* A compact, centered venue composition on desktop. */
+@media(min-width:761px){.venue-composition{max-width:850px;min-height:0;display:flow-root}.church{width:78%}.dinner{width:29%;top:130px}.places-note{margin:60px auto 0;max-width:none;text-align:center;font-size:30px}.places-note .action{margin-top:28px}.places{padding-bottom:55px}}
+
+.rsvp h2{font-size:clamp(62px,8vw,124px)}
+.rsvp h2 span{display:inline-block;max-width:100%;font-size:inherit}
+@media(max-width:760px){.rsvp h2{font-size:clamp(44px,12.5vw,70px)}}
+
+/* A short scroll-held collage, keeping the existing photo sizes. */
+.gallery-preview{margin-top:100px;padding:0}.gallery-pin{padding:65px 6vw 80px;text-align:center}.gallery-pin>.action{margin:0}.js:not(.reduce-motion) .gallery-preview{height:calc(100svh + 900px)}.js:not(.reduce-motion) .gallery-pin{position:sticky;top:72px;height:calc(100svh - 72px);min-height:440px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:25px 6vw}.gallery-pin .gallery-collage{flex-shrink:0}.js:not(.reduce-motion) .collage-photo{translate:var(--entry-x,0px) var(--entry-y,0px);opacity:var(--entry-opacity,1);will-change:translate,opacity}.js:not(.reduce-motion) .gallery-pin>.action{opacity:var(--link-opacity,1)}
+@media(max-width:760px){.gallery-preview{margin-top:85px}.gallery-pin{padding:45px 6vw 65px}.js:not(.reduce-motion) .gallery-preview{height:calc(100svh + 740px)}.js:not(.reduce-motion) .gallery-pin{top:66px;height:calc(100svh - 66px);min-height:410px;padding:20px 6vw}}
+@media(prefers-reduced-motion:reduce){.js .gallery-preview{height:auto!important}.js .gallery-pin{position:static!important;height:auto!important;min-height:0!important;padding-block:45px 65px!important}.js .collage-photo{translate:none!important;opacity:1!important}.js .gallery-pin>.action{opacity:1!important}}
+.gallery-pin>.action:focus-visible{opacity:1!important}
+
+/* Couple portrait expands into a rising, arched white page. */
+.weekend-arch{text-align:center;padding:110px 7vw 35px}.weekend-arch .weekend-title{margin:0}.weekend{padding-top:65px}.js:not(.reduce-motion) .story{height:430svh}.js:not(.reduce-motion) .weekend-arch{position:absolute;inset:0;z-index:4;background:white;display:flex;align-items:center;justify-content:center;padding:70px 7vw;transform:translateY(110%);border-radius:50% 50% 0 0 / 18% 18% 0 0;will-change:transform,border-radius}.js:not(.reduce-motion) .weekend-arch .weekend-title{font-size:clamp(55px,7vw,100px);line-height:1.04}.js:not(.reduce-motion) .welcome-copy{will-change:clip-path,transform,opacity}.reduce-motion .welcome-copy{opacity:1!important}.reduce-motion .weekend-arch{transform:none!important;border-radius:0!important}
+@media(max-width:760px){.js:not(.reduce-motion) .story{height:470svh}.js:not(.reduce-motion) .weekend-arch .weekend-title{font-size:55px}.weekend{padding-top:25px}.weekend-arch{padding-top:85px}}
+@media(prefers-reduced-motion:reduce){.weekend-arch{transform:none!important;border-radius:0!important}.welcome-copy{opacity:1!important}}
+.gallery-pin{overflow:clip}
+/* Bring the weekend details closer to the arched introduction. */
+.js:not(.reduce-motion) .weekend-arch{padding-top:calc(70px + 56svh)}
+@media(max-width:760px){.js:not(.reduce-motion) .weekend-arch{padding-top:calc(70px + 56svh)}}
+
+/* Smaller welcome heading on mobile, including the static fallback. */
+@media(max-width:760px){.welcome-copy h2{font-size:44px}.js:not(.reduce-motion) .welcome-copy h2{font-size:34.4px}}
+@media(max-width:760px){.welcome-heading-line{display:block;white-space:nowrap}.welcome-heading-line br,.welcome-heading-line+br{display:none}.welcome-copy h2,.js:not(.reduce-motion) .welcome-copy h2{font-size:clamp(25px,7.3vw,34.4px)}}
+
+@media(max-width:760px){.collage-ally img,.collage-dalton img{object-position:50% 100%}.gallery-collage{height:274px}.collage-together{top:100px}}

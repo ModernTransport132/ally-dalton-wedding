@@ -1,0 +1,126 @@
+:root {
+  --ink: #172f60;
+  --muted: #52617a;
+  --line: rgba(23,47,96,.18);
+  --wash: #edf2f8;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --title-size: 58px;
+  --section-title-size: 46px;
+  --category-size: 42px;
+  --entry-title-size: 30px;
+  --body-size: 23px;
+  --section-space: 88px;
+  --heading-space: 48px;
+  --entry-space: 40px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { margin: 0; background: white; color: var(--ink); font-family: var(--serif); }
+h1,h2,h3,h4,p { margin: 0; font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible,button:focus-visible,.fact-stories:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
+main p { font-size: var(--body-size); line-height: 1.5; color: var(--muted); }
+main h1 { font-size: var(--title-size); line-height: 1.12; letter-spacing: -.025em; }
+main h2 { font-size: var(--section-title-size); line-height: 1.15; letter-spacing: -.02em; text-align: center; text-wrap: balance; }
+main h1 span,main h2 span { font: inherit; letter-spacing: inherit; }
+main h3,main h4 { font-size: var(--entry-title-size); line-height: 1.2; letter-spacing: -.01em; text-wrap: balance; }
+.content-width { width: min(1080px,calc(100% - 80px)); margin-inline: auto; }
+.skip { position: fixed; top: 8px; left: 12px; background: white; z-index: 30; padding: 12px; transform: translateY(-180%); }
+.skip:focus { transform: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Opening: one heading scale, a shared content width, and a deliberate link gap. */
+.hotel-intro { display: grid; grid-template-columns: 1fr 1.08fr; align-items: center; gap: var(--heading-space) 8%; padding-block: var(--section-space); text-align: center; }
+.intro-copy h1 { font-size: var(--section-title-size); margin-bottom: 28px; text-wrap: balance; }
+.hotel-illustration { display: block; width: 100%; height: auto; max-width: 490px; margin: 0 auto; }
+.intro-copy { min-width: 0; }
+.action { font-size: var(--body-size); display: inline-flex; align-items: center; gap: 30px; border-bottom: 1px solid var(--ink); min-height: 48px; padding: 10px 0; margin-top: 44px; }
+.action span { font: 18px Georgia,serif; transition: transform .25s; }
+.action:active span { transform: translateX(5px); }
+
+.hotel-activities { background: var(--ink); padding-top: var(--section-space); }
+.hotel-activities h2 { color: white; }
+.hotel-activities .activity-grid { width: 100%; margin-top: var(--heading-space); }
+.activity-grid p { max-width: 480px; }
+
+/* The same type scale carries through the animated recommendation panels. */
+.local-guide { background: var(--ink); }
+.guide-wrap { padding-bottom: var(--section-space); }
+.guide-heading { color: white; text-align: center; padding: var(--section-space) 24px var(--heading-space); }
+.guide-heading p { color: #d5e2f1; margin-top: 16px; }
+.picks-grid { width: min(1080px,calc(100% - 80px)); margin: auto; isolation: isolate; }
+.pick-category { position: relative; background: #f7f9fc; margin-bottom: 30svh; padding: 64px; border-radius: 8px; box-shadow: 0 -12px 40px -20px #08173588; }
+.pick-category:nth-child(2) { background: #e5edf7; z-index: 2; }
+.pick-category:nth-child(3) { background: white; z-index: 3; }
+.pick-category:nth-child(4) { z-index: 4; }
+.hotel-activities .pick-category { background: #f7f9fc; }
+.pick-category:last-child { margin-bottom: 0; }
+.panel-motion .pick-category { position: sticky; top: var(--pin-top,90px); }
+.pick-inner { display: grid; grid-template-columns: .65fr 1.35fr; gap: 8%; align-items: start; transform: translateY(var(--paper-lift,0px)); opacity: var(--paper-opacity,1); will-change: transform; }
+.pick-category h3 { font-size: var(--category-size); line-height: 1.15; font-style: normal; letter-spacing: -.02em; }
+.place-list { display: grid; gap: var(--entry-space); }
+.place-list h4 { margin-bottom: 12px; }
+.place-list h4 a { text-decoration: underline; text-decoration-thickness: 1px; text-decoration-color: #b3bfd2; text-underline-offset: 5px; display: inline-block; padding-block: 4px; min-height: 44px; }
+.place-list a:active { opacity: .55; }
+.place-list p { max-width: 480px; }
+
+.hotel-history { padding-block: var(--section-space); }
+.hotel-history>h2 { margin-bottom: var(--heading-space); }
+.history-book { max-width: 870px; margin: auto; min-width: 0; }
+.fact-stories { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; border: 1px solid var(--line); border-radius: 60% 60% 0 0 / 35px 35px 0 0; background: #f7f9fc; scroll-behavior: smooth; }
+.fact-stories::-webkit-scrollbar { display: none; }
+.fact-story { flex: 0 0 100%; min-width: 0; padding: 64px 10%; scroll-snap-align: start; scroll-snap-stop: always; align-self: stretch; text-align: center; }
+.fact-story h3 { margin-bottom: 24px; }
+.story-controls { display: flex; align-items: center; justify-content: center; gap: 24px; margin-top: 24px; }
+.story-controls button { cursor: pointer; color: var(--ink); background: none; border: 0; min-width: 44px; height: 44px; padding: 0; display: inline-flex; align-items: center; justify-content: center; }
+.story-controls>button { font: 25px Georgia,serif; border: 1px solid var(--line); border-radius: 50%; transition: background .2s,transform .2s; }
+.story-controls>button:active { background: #e5edf7; transform: scale(.9); }
+.story-controls>button:disabled { opacity: .25; cursor: default; }
+.story-dots { display: flex; }
+.story-dots button { min-width: 28px; }
+.story-dots span { height: 5px; width: 5px; border-radius: 50%; background: #b6c4d9; transition: transform .25s,background .25s; }
+.story-dots [aria-current] span { background: var(--ink); transform: scale(1.6); }
+.no-js .story-controls { display: none; }
+
+.reveal { opacity: 1; transform: none; }
+.motion-ready .reveal { transition: opacity .8s ease,transform .9s cubic-bezier(.16,1,.3,1); transition-delay: var(--reveal-delay,0ms); }
+.motion-ready .reveal:not(.is-visible) { opacity: 0; transform: translateY(30px); }
+
+@media(max-width:1100px) {
+  .site-header .nav-toggle { display: inline-flex; }
+  .site-header .nav-menu { position: absolute; top: 72px; left: 0; right: 0; display: grid; align-items: stretch; max-height: 0; opacity: 0; visibility: hidden; pointer-events: none; overflow: hidden; padding: 1rem; background: white; transform: translateY(-10px); }
+  .site-header .nav-menu.is-open { max-height: calc(100svh - 72px); opacity: 1; visibility: visible; pointer-events: auto; overflow: auto; transform: none; }
+  .site-header .nav-menu a { display: block; }
+  .site-header .nav-menu li { opacity: 1; transform: none; }
+}
+@media(max-width:800px) {
+  .pick-category { padding: 48px 36px; }
+  .pick-inner { grid-template-columns: .5fr 1.5fr; gap: 6%; }
+}
+@media(max-width:700px) {
+  :root { --title-size: 40px; --section-title-size: 36px; --category-size: 34px; --entry-title-size: 28px; --body-size: 22px; --section-space: 64px; --heading-space: 40px; --entry-space: 32px; }
+  .content-width { width: calc(100% - 48px); }
+  .hotel-intro { display: block; }
+  .hotel-illustration { max-width: 360px; margin: 0 auto var(--heading-space); }
+  .hotel-activities .content-width { width: calc(100% - 32px); }
+  .hotel-activities h2 { padding-inline: 8px; }
+  .picks-grid { width: calc(100% - 32px); }
+  .pick-category { padding: 40px 24px; margin-bottom: 28svh; }
+  .pick-inner { display: block; }
+  .pick-category h3 { margin-bottom: var(--entry-space); }
+  .place-list h4 { margin-bottom: 12px; }
+  .fact-story { padding: 48px 24px 40px; }
+  .story-controls { gap: 16px; }
+  .story-dots button { min-width: 27px; }
+}
+@media(max-width:759px) { .site-header .nav-menu { top: 66px; } }
+@media(prefers-reduced-motion:reduce) {
+  html,.fact-stories { scroll-behavior: auto; }
+  *,*:before,*:after { animation: none !important; transition: none !important; }
+  .motion-ready .reveal:not(.is-visible) { opacity: 1; transform: none; }
+  .pick-category,.panel-motion .pick-category { position: relative; top: auto; margin-bottom: 24px; }
+  .pick-inner { transform: none; opacity: 1; }
+}
+
+/* Keep the dining, drinks, and activities panels visually consistent. */
+.picks-grid .pick-category.drink{background:#fff}
