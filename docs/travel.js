@@ -24,3 +24,6 @@ document.querySelectorAll('.action').forEach(control=>{
   control.addEventListener('click',()=>{control.classList.remove('tap-playing');void control.offsetWidth;control.classList.add('tap-playing')});
   control.querySelector('.button-line').addEventListener('animationend',()=>control.classList.remove('tap-playing'));
 });
+
+// Hide the fallback navigation only after its controls are ready.
+document.documentElement.classList.add('nav-ready');

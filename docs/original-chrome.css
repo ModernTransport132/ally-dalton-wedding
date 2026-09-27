@@ -450,3 +450,8 @@
 
 /* Keep display titles consistently upright across the redesigned pages. */
 :is(h1,h2,h3,h4,h5,h6), :is(h1,h2,h3,h4,h5,h6) *, .occasion { font-style: normal; }
+
+/* Keyboard focus and navigation remain usable if a page script fails. */
+[hidden]{display:none!important}
+a:focus-visible,button:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #284d9d;outline-offset:4px}
+@media(max-width:1099px){html:not(.nav-ready) .site-header{position:relative}html:not(.nav-ready) .site-header .nav{height:auto;flex-wrap:wrap}html:not(.nav-ready) .site-header .nav-toggle{display:none}html:not(.nav-ready) .site-header .nav-menu{position:static;display:flex;flex-wrap:wrap;width:100%;max-height:none;height:auto;opacity:1;visibility:visible;pointer-events:auto;overflow:visible;transform:none;padding:12px 0;gap:8px 16px}html:not(.nav-ready) .nav-menu li{opacity:1;transform:none}}

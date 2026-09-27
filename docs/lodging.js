@@ -65,3 +65,6 @@ book.addEventListener('scroll',()=>{if(!bookFrame)bookFrame=requestAnimationFram
 book.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();goStory(selected+(event.key==='ArrowRight'?1:-1))}});
 motionPreference.addEventListener('change',()=>{document.documentElement.classList.remove('motion-ready');reveals.forEach(element=>element.classList.add('is-visible'));measurePapers()});
 updateStory();
+
+// Hide the fallback navigation only after its controls are ready.
+document.documentElement.classList.add('nav-ready');

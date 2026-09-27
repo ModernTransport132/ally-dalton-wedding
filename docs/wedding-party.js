@@ -139,3 +139,6 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navMenu.classList.c
 document.addEventListener('click',e=>{if(!e.target.closest('.site-header'))closeMenu()});
 
 
+
+// Hide the fallback navigation only after its controls are ready.
+document.documentElement.classList.add('nav-ready');

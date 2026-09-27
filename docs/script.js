@@ -106,3 +106,6 @@ let collageQueued=false;
 function paintCollage(){collageQueued=false;if(reduced)return;const top=innerWidth>760?72:66;const lead=Math.min(280,innerHeight*.3);const p=clamp((top+lead-collageSection.getBoundingClientRect().top)/Math.max(1,collageSection.offsetHeight-collagePin.offsetHeight+lead));collageEntries.forEach(({el,start,x,y})=>{const t=ease(clamp((p-start)/.46));el.style.setProperty('--entry-x',x*(1-t)+'px');el.style.setProperty('--entry-y',y*(1-t)+'px');el.style.setProperty('--entry-opacity',t)});collagePin.style.setProperty('--link-opacity',ease(clamp((p-.62)/.22)))}
 function queueCollage(){if(!collageQueued){collageQueued=true;requestAnimationFrame(paintCollage)}}
 addEventListener('scroll',queueCollage,{passive:true});addEventListener('resize',queueCollage);motion.addEventListener('change',queueCollage);paintCollage();
+
+// Hide the fallback navigation only after its controls are ready.
+document.documentElement.classList.add('nav-ready');
