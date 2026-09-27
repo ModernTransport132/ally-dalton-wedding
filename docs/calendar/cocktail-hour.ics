@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Alexandra and Dalton//Wedding Schedule//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:ally-dalton-cocktail-hour-2027@wedding.local
+DTSTAMP:20260926T203235Z
+DTSTART:20270417T210000Z
+DTEND:20270417T220000Z
+SEQUENCE:1
+SUMMARY:Alexandra & Dalton — Cocktail Hour
+LOCATION:The Crystal Ballroom at The Battle House\, 26 North Royal Str
+ eet\, Mobile\, AL 36602
+DESCRIPTION:Formal attire. All times are local to Mobile (America/Chic
+ ago).
+URL:https://www.google.com/maps/search/?api=1&query=26%20North%20Royal
+ %20Street%2C%20Mobile%2C%20AL%2036602
+END:VEVENT
+END:VCALENDAR
