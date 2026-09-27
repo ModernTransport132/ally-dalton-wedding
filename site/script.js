@@ -2,12 +2,26 @@ const one=s=>document.querySelector(s),all=s=>[...document.querySelectorAll(s)];
 const motion=matchMedia('(prefers-reduced-motion: reduce)'),root=document.documentElement;
 let reduced=root.classList.contains('reduce-motion');const clamp=v=>Math.max(0,Math.min(1,v)),ease=v=>v*v*(3-2*v),mix=(a,b,p)=>a+(b-a)*p;
 const story=one('.story'),stage=one('.story-stage'),portraits=all('.portrait'),copy=one('.welcome-copy');let queued=false;
-function pose(el,x,y,w,h){Object.assign(el.style,{left:x+'%',top:y+'%',width:w+'%',height:h+'%'})}
-function paint(){queued=false;if(reduced)return;const rect=story.getBoundingClientRect(),raw=clamp(-rect.top/Math.max(1,story.offsetHeight-stage.offsetHeight)),p=clamp(raw/.62);if(innerWidth>760){const align=ease(clamp(p/.28)),depart=ease(clamp((p-.4)/.46));pose(portraits[0],mix(7,-63,depart),mix(18,15,align),mix(25,27,align),mix(58,70,align));pose(portraits[1],mix(37.5,-30,depart),mix(25,15,align),mix(25,27,align),mix(58,70,align));pose(portraits[2],mix(68,57,depart),mix(mix(32,15,align),8,depart),mix(mix(25,27,align),35,depart),mix(mix(58,70,align),84,depart));portraits[0].style.opacity=portraits[1].style.opacity=1-clamp((p-.66)/.16);const reveal=ease(clamp((p-.62)/.227));copy.style.clipPath=`inset(0 0 ${100*(1-reveal)}% 0)`;copy.style.transform=`translateY(${35*(1-reveal)}px)`}else{const enter2=ease(clamp((p-.12)/.22)),enter3=ease(clamp((p-.37)/.23)),finish=ease(clamp((p-.65)/.22));pose(portraits[0],8,mix(16,-85,finish),65,51);pose(portraits[1],25,mix(110,23,enter2)-finish*105,65,51);pose(portraits[2],mix(12,21,finish),mix(mix(110,18,enter3),6,finish),mix(76,58,finish),mix(58,48,finish));portraits[0].style.opacity=portraits[1].style.opacity=1-finish;const reveal=ease(clamp((p-.73)/.18));copy.style.clipPath=`inset(0 0 ${100*(1-reveal)}% 0)`;copy.style.transform=`translateY(${25*(1-reveal)}px)`}paintStoryExit(raw)}
 
-function paintStoryExit(raw){const arch=one('.weekend-arch'),mobile=innerWidth<=760;const expand=ease(clamp((raw-.65)/.17));if(raw>=.65){pose(portraits[2],mix(mobile?21:57,0,expand),mix(mobile?6:8,0,expand),mix(mobile?58:35,100,expand),mix(mobile?48:84,100,expand))}copy.style.opacity=1-ease(clamp((raw-.64)/.09));const lift=ease(clamp((raw-.8)/.18));arch.style.transform='translateY('+110*(1-lift)+'%)';arch.style.borderRadius='50% 50% 0 0 / '+18*(1-lift)+'% '+18*(1-lift)+'% 0 0'}
-function queue(){if(!queued){queued=true;requestAnimationFrame(paint)}}addEventListener('scroll',queue,{passive:true});addEventListener('resize',queue);paint();
-function setMotion(value){reduced=value;root.classList.toggle('reduce-motion',value);portraits.forEach(el=>el.removeAttribute('style'));copy.removeAttribute('style');paint()}
+// Reserve space for the complete welcome message before sizing its mobile photo.
+let mobileWelcomePhoto={top:10,height:39,crop:60};
+function measureWelcome(){
+ if(innerWidth>760||reduced){copy.style.removeProperty('--welcome-top');return;}
+ const height=stage.clientHeight,headerHeight=one('.site-header').offsetHeight;
+ const gap=24,bottom=32,available=height-headerHeight-16-copy.offsetHeight-gap-bottom;
+ const photoHeight=Math.max(80,Math.min(height*.39,available));
+ const photoTop=headerHeight+16+Math.max(0,available-photoHeight)*.25;
+ const scaledImageHeight=stage.clientWidth*.58*1.5;
+ const crop=photoHeight<scaledImageHeight?Math.min(60,scaledImageHeight*.12/(scaledImageHeight-photoHeight)*100):60;
+ mobileWelcomePhoto={top:photoTop/height*100,height:photoHeight/height*100,crop};
+ copy.style.setProperty('--welcome-top',(photoTop+photoHeight+gap)+'px');
+}
+function pose(el,x,y,w,h){Object.assign(el.style,{left:x+'%',top:y+'%',width:w+'%',height:h+'%'})}
+function paint(){queued=false;if(reduced)return;const rect=story.getBoundingClientRect(),raw=clamp(-rect.top/Math.max(1,story.offsetHeight-stage.offsetHeight)),p=clamp(raw/.62);if(innerWidth>760){portraits[2].querySelector('img').style.removeProperty('object-position');const align=ease(clamp(p/.28)),depart=ease(clamp((p-.4)/.46));pose(portraits[0],mix(7,-63,depart),mix(18,15,align),mix(25,27,align),mix(58,70,align));pose(portraits[1],mix(37.5,-30,depart),mix(25,15,align),mix(25,27,align),mix(58,70,align));pose(portraits[2],mix(68,57,depart),mix(mix(32,15,align),8,depart),mix(mix(25,27,align),35,depart),mix(mix(58,70,align),84,depart));portraits[0].style.opacity=portraits[1].style.opacity=1-clamp((p-.66)/.16);const reveal=ease(clamp((p-.62)/.227));copy.style.clipPath=`inset(0 0 ${100*(1-reveal)}% 0)`;copy.style.transform=`translateY(${35*(1-reveal)}px)`}else{const enter2=ease(clamp((p-.12)/.22)),enter3=ease(clamp((p-.37)/.23)),finish=ease(clamp((p-.65)/.22));pose(portraits[0],8,mix(16,-85,finish),65,51);pose(portraits[1],25,mix(110,23,enter2)-finish*105,65,51);pose(portraits[2],mix(12,21,finish),mix(mix(110,18,enter3),mobileWelcomePhoto.top,finish),mix(76,58,finish),mix(58,mobileWelcomePhoto.height,finish));portraits[2].querySelector('img').style.objectPosition='50% '+mix(48,mobileWelcomePhoto.crop,finish)+'%';portraits[0].style.opacity=portraits[1].style.opacity=1-finish;const reveal=ease(clamp((p-.73)/.18));copy.style.clipPath=`inset(0 0 ${100*(1-reveal)}% 0)`;copy.style.transform=`translateY(${25*(1-reveal)}px)`}paintStoryExit(raw)}
+
+function paintStoryExit(raw){const arch=one('.weekend-arch'),mobile=innerWidth<=760;const expand=ease(clamp((raw-.65)/.17));if(raw>=.65){pose(portraits[2],mix(mobile?21:57,0,expand),mix(mobile?mobileWelcomePhoto.top:8,0,expand),mix(mobile?58:35,100,expand),mix(mobile?mobileWelcomePhoto.height:84,100,expand))}if(mobile&&raw>=.65)portraits[2].querySelector('img').style.objectPosition='50% '+mix(mobileWelcomePhoto.crop,48,expand)+'%';copy.style.opacity=1-ease(clamp((raw-.64)/.09));const lift=ease(clamp((raw-.8)/.18));arch.style.transform='translateY('+110*(1-lift)+'%)';arch.style.borderRadius='50% 50% 0 0 / '+18*(1-lift)+'% '+18*(1-lift)+'% 0 0'}
+function queue(){if(!queued){queued=true;requestAnimationFrame(paint)}}addEventListener('scroll',queue,{passive:true});addEventListener('resize',()=>{measureWelcome();queue()});paint();
+function setMotion(value){reduced=value;root.classList.toggle('reduce-motion',value);portraits.forEach(el=>el.removeAttribute('style'));copy.removeAttribute('style');portraits[2].querySelector('img').style.removeProperty('object-position');measureWelcome();paint()}
 motion.addEventListener('change',e=>setMotion(e.matches));
 
 function updateCountdown(){const total=Math.max(0,Math.floor((new Date('2027-04-17T14:00:00-05:00')-Date.now())/1000));const values={days:Math.floor(total/86400),hours:Math.floor(total/3600)%24,minutes:Math.floor(total/60)%60,seconds:total%60};Object.entries(values).forEach(([key,value])=>one('[data-count="'+key+'"]').textContent=String(value).padStart(2,'0'))}updateCountdown();setInterval(updateCountdown,1000);
@@ -109,3 +123,6 @@ addEventListener('scroll',queueCollage,{passive:true});addEventListener('resize'
 
 // Hide the fallback navigation only after its controls are ready.
 document.documentElement.classList.add('nav-ready');
+
+measureWelcome();queue();
+document.fonts.ready.then(()=>{measureWelcome();queue()});

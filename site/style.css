@@ -330,3 +330,10 @@ dialog h2{font-size:55px}
 @media(max-width:760px){.welcome-heading-line{display:block;white-space:nowrap}.welcome-heading-line br,.welcome-heading-line+br{display:none}.welcome-copy h2,.js:not(.reduce-motion) .welcome-copy h2{font-size:clamp(25px,7.3vw,34.4px)}}
 
 @media(max-width:760px){.collage-ally img,.collage-dalton img{object-position:50% 100%}.gallery-collage{height:274px}.collage-together{top:100px}}
+
+/* Fit the photograph and the full welcome message inside a mobile screen. */
+@media(max-width:760px){
+ .js:not(.reduce-motion) .story-stage{height:100svh;min-height:0}
+ .js:not(.reduce-motion) .welcome-copy{top:var(--welcome-top,52%)}
+ .js:not(.reduce-motion) .portrait-together{margin-top:0}
+}
