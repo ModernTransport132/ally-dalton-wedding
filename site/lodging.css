@@ -34,6 +34,8 @@ main h3,main h4 { font-size: var(--entry-title-size); line-height: 1.2; letter-s
 .intro-copy h1 { font-size: var(--section-title-size); margin-bottom: 28px; text-wrap: balance; }
 .hotel-illustration { display: block; width: 100%; height: auto; max-width: 490px; margin: 0 auto; }
 .intro-copy { min-width: 0; }
+.intro-copy .room-block-note { margin-top: 24px; font-size: 21px; line-height: 1.45; }
+.intro-copy .room-block-note + .action { margin-top: 16px; }
 .action { font-size: var(--body-size); display: inline-flex; align-items: center; gap: 30px; border-bottom: 1px solid var(--ink); min-height: 48px; padding: 10px 0; margin-top: 44px; }
 .action span { font: 18px Georgia,serif; transition: transform .25s; }
 .action:active span { transform: translateX(5px); }
